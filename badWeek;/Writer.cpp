@@ -8,13 +8,14 @@ Writer::Writer(const std::string& mensagem, const sf::FloatRect& caixa, bool ins
 	fonte = FontManager::carregar("Fontes/computador.ttf");
 	texto = sf::Text("", *fonte);
 	texto.setFillColor(sf::Color::White);
-	this->caixa = caixa;
+	setRect(caixa);
 	this->instantaneo = instantaneo;
+
 	ler(mensagem);
 
 	//Gambiarras :D
-	if (instantaneo)
-		update();
+	//if (instantaneo)
+		//update();
 }
 
 void Writer::update() {
@@ -37,7 +38,8 @@ void Writer::escrever() {
 		palavraAtual = palavras.front();
 		palavras.erase(palavras.begin());
 
-		texto.setString(texto.getString() + " ");
+		if (texto.getString()[texto.getString().getSize() - 1] != '\n')
+			texto.setString(texto.getString() + " ");
 	}
 }
 
@@ -46,13 +48,18 @@ void Writer::draw(sf::RenderTarget& target) {
 }
 
 void Writer::ler(const std::string& mensagem) {
-	std::stringstream sb(mensagem);
-	std::string buffer;
+	std::stringstream linhas(mensagem), linhaAtual;
+	std::string bufferLinha, bufferPalavra;
 
 	if (!palavras.empty())
 		return;
-	while (sb >> buffer)
-		palavras.push_back(buffer);
+	while (std::getline(linhas, bufferLinha, '\n')) {
+		linhaAtual = std::stringstream(bufferLinha);
+		
+		while (linhaAtual >> bufferPalavra)
+			palavras.push_back(bufferPalavra);
+		palavras.back() += '\n';
+	}
 
 	palavraAtual = palavras.front();
 	palavras.erase(palavras.begin());
@@ -68,4 +75,17 @@ void Writer::formatar() {
 	
 	if (!checarDentro(temp.getGlobalBounds()))
 		texto.setString(texto.getString() + "\n");
+}
+
+void Writer::setRect(const sf::FloatRect& caixa) {
+	this->caixa = caixa;
+	texto.setPosition(caixa.left, caixa.top);
+}
+
+void Writer::setFontSize(const unsigned tamanho) {
+	texto.setCharacterSize(tamanho);
+}
+
+void Writer::setFontColor(sf::Color cor) {
+	texto.setFillColor(cor);
 }

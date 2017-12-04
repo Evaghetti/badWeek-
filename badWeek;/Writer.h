@@ -1,3 +1,6 @@
+#ifndef WRITER_H
+#define WRITER_H
+
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -13,6 +16,10 @@ class Writer {
 		
 		void draw(sf::RenderTarget& target);
 		void update();
+
+		void setRect(const sf::FloatRect& caixa);
+		void setFontSize(const unsigned tamanho);
+		void setFontColor(sf::Color cor = sf::Color::White);
 	private:
 		void ler(const std::string& mensagem);
 		void formatar();
@@ -29,3 +36,4 @@ class Writer {
 		bool instantaneo;
 };
 
+#endif

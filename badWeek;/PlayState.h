@@ -10,6 +10,5 @@ class PlayState : public GameState {
 		void update() override;
 	private:
 		Computador pc;
-		Writer mensagem;
 };
 

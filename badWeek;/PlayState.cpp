@@ -21,8 +21,10 @@ void PlayState::handleInput() {
 	while (window->pollEvent(e)) {
 		if (e.type == sf::Event::Closed)
 			window->close();
-		else if (e.type == sf::Event::TextEntered)
+		if (e.type == sf::Event::TextEntered)
 			pc.handleInput(static_cast<char>(e.text.unicode));
+		if (e.type == sf::Event::MouseButtonPressed)
+			pc.handleMouse(sf::Vector2f((float)e.mouseButton.x, (float)e.mouseButton.y));
 	}
 }
 

@@ -82,8 +82,8 @@ void Writer::setRect(const sf::FloatRect& caixa) {
 	texto.setPosition(caixa.left, caixa.top);
 }
 
-void Writer::setFontSize(const unsigned tamanho) {
-	texto.setCharacterSize(tamanho);
+void Writer::setFontSize(const float tamanho) {
+	texto.setCharacterSize((unsigned)tamanho);
 }
 
 void Writer::setFontColor(sf::Color cor) {

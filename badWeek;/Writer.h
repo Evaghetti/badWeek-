@@ -18,7 +18,7 @@ class Writer {
 		void update();
 
 		void setRect(const sf::FloatRect& caixa);
-		void setFontSize(const unsigned tamanho);
+		void setFontSize(const float tamanho);
 		void setFontColor(sf::Color cor = sf::Color::White);
 	private:
 		void ler(const std::string& mensagem);

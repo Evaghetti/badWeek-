@@ -3,6 +3,13 @@
 
 #include "Writer.h"
 
+enum Pagina {
+	CODAR,
+	NAVEGAR,
+	MANDAR_PROJETO,
+	PRINCIPAL
+};
+
 class Computador {
 	public:
 		Computador(const sf::Vector2f& position, const sf::Vector2f& scale = { 1.0f, 1.0f });
@@ -12,7 +19,9 @@ class Computador {
 	private:
 		sf::Sprite sprite;
 		sf::FloatRect botao;
+		
 		Writer menu;
+		Pagina paginaAtual;
 
 		bool ligado = false;
 };

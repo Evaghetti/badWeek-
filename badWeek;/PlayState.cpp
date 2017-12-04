@@ -3,7 +3,7 @@
 
 PlayState::PlayState(sf::RenderWindow* window) :
 	GameState(window),
-	pc({ 0.0f, 0.0f }, {.5f, .5f}) 
+	pc({ 215.0f, 136.0f }, {.5f, .5f}) 
 {
 }
 

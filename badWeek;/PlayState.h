@@ -1,4 +1,5 @@
 #include "GameState.h"
+#include "SmoothWrite.h"
 #include "Computador.h"
 
 class PlayState : public GameState {
@@ -6,8 +7,9 @@ class PlayState : public GameState {
 		PlayState(sf::RenderWindow* window);
 		void draw() override;
 		void handleInput() override;
-		void update(const float deltaTime) override;
+		void update() override;
 	private:
 		Computador pc;
+		SmoothWrite mensagem;
 };
 

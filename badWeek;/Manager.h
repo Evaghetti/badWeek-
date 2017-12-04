@@ -1,4 +1,5 @@
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/Font.hpp>
 
 #include <unordered_map>
 #include <string>
@@ -28,3 +29,4 @@ template <typename T>
 std::unordered_map<std::string, std::shared_ptr<T>> Manager<T>::recursos;
 
 typedef Manager<sf::Texture> TextureManager;
+typedef Manager<sf::Font> FontManager;

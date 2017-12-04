@@ -18,7 +18,7 @@ Engine::Engine(const std::string& nome, int largura, int altura)
 void Engine::run() {
 	while (playState.works()) {
 		playState.handleInput();
-		playState.update(0.0f);
+		playState.update();
 		playState.draw();
 	}
 }

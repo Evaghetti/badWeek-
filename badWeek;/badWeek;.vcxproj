@@ -123,7 +123,7 @@
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\GameState.cpp" />
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\main.cpp" />
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\PlayState.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\SmoothWrite.cpp" />
+    <ClCompile Include="Writer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Computador.h" />
@@ -131,7 +131,7 @@
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\GameState.h" />
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Manager.h" />
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\PlayState.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\SmoothWrite.h" />
+    <ClInclude Include="Writer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

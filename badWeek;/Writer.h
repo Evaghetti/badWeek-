@@ -7,15 +7,16 @@
 #include <string>
 #include <vector>
 
-class SmoothWrite {
+class Writer {
 	public:
-		SmoothWrite(const std::string& mensagem, const sf::FloatRect& caixa);
+		Writer(const std::string& mensagem, const sf::FloatRect& caixa, bool instantaneo = false);
 		
 		void draw(sf::RenderTarget& target);
 		void update();
 	private:
 		void ler(const std::string& mensagem);
 		void formatar();
+		void escrever();
 		bool checarDentro(const sf::FloatRect& outro) const;
 	private:
 		std::vector<std::string> palavras;
@@ -24,5 +25,7 @@ class SmoothWrite {
 
 		sf::Text texto;
 		sf::FloatRect caixa;
+
+		bool instantaneo;
 };
 

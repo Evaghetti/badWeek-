@@ -3,7 +3,7 @@
 
 PlayState::PlayState(sf::RenderWindow* window) :
 	GameState(window),
-	mensagem("Teste Maroto pra ver se a quebra de linhas pode funcionar nessa minha merda de vida :D", sf::FloatRect(0.0f, 0.0f, 640.0f, 480.0f)),
+	mensagem("Teste Maroto pra ver se a quebra de linhas pode funcionar nessa minha merda de vida :D", sf::FloatRect(0.0f, 0.0f, 640.0f, 480.0f), true),
 	pc({ 0.0f, 0.0f }, {.5f, .5f}) 
 {
 }

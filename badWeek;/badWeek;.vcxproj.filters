@@ -30,7 +30,7 @@
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Engine.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\SmoothWrite.cpp">
+    <ClCompile Include="Writer.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,7 +50,7 @@
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Engine.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\SmoothWrite.h">
+    <ClInclude Include="Writer.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

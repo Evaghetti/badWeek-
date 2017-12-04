@@ -1,5 +1,5 @@
 #include "GameState.h"
-#include "SmoothWrite.h"
+#include "Writer.h"
 #include "Computador.h"
 
 class PlayState : public GameState {
@@ -10,6 +10,6 @@ class PlayState : public GameState {
 		void update() override;
 	private:
 		Computador pc;
-		SmoothWrite mensagem;
+		Writer mensagem;
 };
 

@@ -55,15 +55,24 @@ void Computador::handleInput(const char letra) {
 		switch (paginaAtual) {
 			case PRINCIPAL:
 				if (letra == '1') {
-					lerCodigo("Codigos/1.cpp");
-					paginaAtual = CODAR;
+					std::stringstream caminho;
+					caminho << "Codigos/" << random.range(1, 5) << ".cpp";
+					try {
+						lerCodigo(caminho.str());
+						paginaAtual = CODAR;
+					}
+					catch (...) {
+						paginaAtual = PRINCIPAL;
+					}
 				}
 				else if (letra == '2') 
 					paginaAtual = NAVEGAR;
 			break;
 			case CODAR:
-				if (!codigo.done())
-					codigo.update();
+				if (!codigo.done()) {
+					for (int i = 0; i < 3; i++)
+						codigo.update();
+				}
 				else {
 					codigo.setMensagem("");
 					paginaAtual = PRINCIPAL;

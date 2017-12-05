@@ -2,6 +2,7 @@
 #include <SFML/Graphics/Sprite.hpp>
 
 #include "Writer.h"
+#include "Rand.h"
 
 enum Pagina {
 	CODAR,
@@ -25,6 +26,7 @@ class Computador {
 		sf::FloatRect botaoLigar;
 		sf::Vector2f screenOffset, screenSize;
 
+		Random random;
 		Writer principal, codigo;
 		Pagina paginaAtual;
 

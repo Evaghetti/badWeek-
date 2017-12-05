@@ -1,5 +1,6 @@
 #include "PlayState.h"
 #include <SFML/Window/Event.hpp>
+#include <iostream>
 
 PlayState::PlayState(sf::RenderWindow* window) :
 	GameState(window),

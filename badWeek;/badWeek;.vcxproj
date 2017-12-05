@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -123,6 +123,7 @@
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\GameState.cpp" />
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\main.cpp" />
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\PlayState.cpp" />
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Rand.cpp" />
     <ClCompile Include="Writer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +132,7 @@
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\GameState.h" />
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Manager.h" />
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\PlayState.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Rand.h" />
     <ClInclude Include="Writer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

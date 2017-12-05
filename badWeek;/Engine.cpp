@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <exception>
+#include "Rand.h"
 
 Engine::Engine(const std::string& nome, int largura, int altura)
 	: window(sf::VideoMode(largura, altura), nome),

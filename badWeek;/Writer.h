@@ -25,6 +25,7 @@ class Writer {
 		void setParams(const Writer& outro);
 
 		void scaleToFit(const std::string& mensagem, const float fracDiminuir);
+		bool done() const;
 	private:
 		void ler(const std::string& mensagem);
 		void formatar();

@@ -7,7 +7,7 @@
 Computador::Computador(const sf::Vector2f& position, const sf::Vector2f& scale)
 	: sprite(*TextureManager::carregar("Imagens/Computer.png")),
 	  principal("1) Codar\n2) Navegar Na internet.\n3) Mandar projeto pro seu chefe para avaliação.\n", sf::FloatRect(), true),
-	  codigo(".", sf::FloatRect())
+	  codigo("", sf::FloatRect())
 {
 	sprite.setPosition(position);
 	sprite.setScale(scale);
@@ -45,12 +45,17 @@ void Computador::handleInput(const char letra) {
 		switch (paginaAtual) {
 			case PRINCIPAL:
 				if (letra == '1') {
-					lerCodigo("Codigos/4.cpp");
+					lerCodigo("Codigos/1.cpp");
 					paginaAtual = CODAR;
 				}
 			break;
 			case CODAR:
-				codigo.update();
+				if (!codigo.done())
+					codigo.update();
+				else {
+					codigo.setMensagem("");
+					paginaAtual = PRINCIPAL;
+				}
 				break;
 		}
 	}

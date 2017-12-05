@@ -2,7 +2,7 @@
 #include "Manager.h"
 
 #include <sstream>
-
+#include <iostream>
 Writer::Writer(const std::string& mensagem, const sf::FloatRect& caixa, bool instantaneo) {
 	fonte = FontManager::carregar("Fontes/computador.ttf");
 	texto = sf::Text("", *fonte);
@@ -62,8 +62,12 @@ void Writer::ler(const std::string& mensagem) {
 			tabular += 4;
 	}
 
-	palavraAtual = palavras.front();
-	palavras.erase(palavras.begin());
+	if (!palavras.empty()) {
+		palavraAtual = palavras.front();
+		palavras.erase(palavras.begin());
+	}
+	else
+		palavraAtual = "";
 }
 
 bool Writer::checarDentro(const sf::FloatRect& outro) const {
@@ -104,6 +108,7 @@ void Writer::setMensagem(const std::string& mensagem) {
 	if (!palavras.empty())
 		return;
 
+	texto.setString("");
 	ler(mensagem);
 }
 
@@ -115,4 +120,8 @@ void Writer::scaleToFit(const std::string& mensagem, const float fracDiminuir) {
 		howItWillBe.setScale(howItWillBe.getScale() * fracDiminuir);
 
 	texto.setScale(howItWillBe.getScale());
+}
+
+bool Writer::done() const {
+	return palavras.empty() && palavraAtual.empty();
 }

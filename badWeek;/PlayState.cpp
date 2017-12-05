@@ -47,14 +47,10 @@ void PlayState::update() {
 			player.modificarFelicidade(deltaTime * relogio.getModificador(), 1);
 		else if (pc.getPaginaAtual() == CODAR)
 			player.modificarFelicidade(deltaTime * relogio.getModificador(), -1);
+		player.modificarSono(deltaTime * relogio.getModificador(), 1);
+	}
+	else 
 		player.modificarSono(deltaTime * relogio.getModificador(), -1);
-	}
-	else {
-		if (relogio.deDia())
-			player.modificarFelicidade(deltaTime * relogio.getModificador(), 1);
-		else
-			player.modificarSono(deltaTime * relogio.getModificador(), 1);
-	}
 
 	player.update();
 }

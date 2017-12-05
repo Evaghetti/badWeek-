@@ -7,7 +7,8 @@
 Computador::Computador(const sf::Vector2f& position, const sf::Vector2f& scale)
 	: sprite(*TextureManager::carregar("Imagens/Computer.png")),
 	  navegador(*TextureManager::carregar("Imagens/Navegador.png")),
-	  principal("1) Codar\n2) Navegar Na internet.\n3) Mandar projeto pro seu chefe para avaliação.\n", sf::FloatRect(), true),
+	  //Gambiarra.
+	  principal("1) Codar\n2) Navegar Na internet.\n3) Mandar projeto pro\nseu chefe para avaliação.\n", sf::FloatRect(), true),
 	  codigo("", sf::FloatRect())
 {
 	screenOffset = position + sf::Vector2f(47.f * scale.x, 32.f * scale.y);

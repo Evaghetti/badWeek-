@@ -1,6 +1,7 @@
 #include "PlayState.h"
 #include <SFML/Window/Event.hpp>
 
+#include <iostream>
 
 PlayState::PlayState(sf::RenderWindow* window) :
 	GameState(window),
@@ -14,6 +15,7 @@ void PlayState::draw() {
 
 	pc.draw(*window);
 	relogio.draw(*window);
+	player.draw(*window);
 
 	window->display();
 }
@@ -35,12 +37,28 @@ void PlayState::update() {
 	const float deltaTime = getDeltaTime();
 	relogio.update(deltaTime);
 
-	if (!pc.taLigado() || pc.getPaginaAtual() != PRINCIPAL)
+	if (!pc.taLigado() || pc.getPaginaAtual() != PRINCIPAL) 
 		relogio.setRapido(true);
 	else
 		relogio.setRapido(false);
+
+	if (pc.taLigado()) {
+		if (pc.getPaginaAtual() == NAVEGAR)
+			player.modificarFelicidade(deltaTime * relogio.getModificador(), 1);
+		else if (pc.getPaginaAtual() == CODAR)
+			player.modificarFelicidade(deltaTime * relogio.getModificador(), -1);
+		player.modificarSono(deltaTime * relogio.getModificador(), -1);
+	}
+	else {
+		if (relogio.deDia())
+			player.modificarFelicidade(deltaTime * relogio.getModificador(), 1);
+		else
+			player.modificarSono(deltaTime * relogio.getModificador(), 1);
+	}
+
+	player.update();
 }
 
 bool PlayState::works() const {
-	return GameState::works() && !(relogio.acabouTempo() || pc.getPaginaAtual() == MANDAR_PROJETO);
+	return GameState::works() && !(relogio.acabouTempo() || pc.getPaginaAtual() == MANDAR_PROJETO || player.morreu());
 }

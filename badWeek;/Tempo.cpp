@@ -64,3 +64,14 @@ void Tempo::setRapido(bool rapido) {
 bool Tempo::acabouTempo() const {
 	return dia > 3;
 }
+
+bool Tempo::deDia() const {
+	return hora >= 19;
+}
+
+float Tempo::getModificador() const {
+	if (rapido)
+		return modTempoRapido;
+
+	return modTempoNormal;
+}

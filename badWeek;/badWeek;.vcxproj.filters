@@ -39,6 +39,9 @@
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Tempo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Player.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\GameState.h">
@@ -63,6 +66,9 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Tempo.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Player.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>

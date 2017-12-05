@@ -1,6 +1,7 @@
 #include "GameState.h"
 #include "Writer.h"
 #include "Computador.h"
+#include "Player.h"
 #include "Tempo.h"
 
 class PlayState : public GameState {
@@ -13,5 +14,6 @@ class PlayState : public GameState {
 	private:
 		Computador pc;
 		Tempo relogio;
+		Player player;
 };
 

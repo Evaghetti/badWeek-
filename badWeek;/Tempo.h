@@ -13,6 +13,9 @@ class Tempo {
 
 		void setRapido(bool rapido);
 		bool acabouTempo() const;
+		bool deDia() const;
+
+		float getModificador() const;
 	private:
 		std::string horarioToString() const;
 	private:

@@ -24,12 +24,12 @@ void Player::update() {
 }
 
 void Player::modificarSono(const float deltaTime, const int mod) {
-	if (sono >= 0.f && sono <= 100.f)
+	if (sono >= 0.f && sono <= 120.f)
 		sono += (deltaTime * porcSono) * mod;
 }
 
 void Player::modificarFelicidade(const float deltaTime, const int mod) {
-	if (felicidade > 0.f && felicidade <= 100.f)
+	if (felicidade > -20.f && felicidade <= 100.f)
 		felicidade += (deltaTime * porcFelicidade) * mod;
 }
 
@@ -45,5 +45,5 @@ std::string Player::toString() const {
 }
 
 bool Player::morreu() const {
-	return sono > 100.f || felicidade < 0.f;
+	return sono > 120.f || felicidade < -20.f;
 }

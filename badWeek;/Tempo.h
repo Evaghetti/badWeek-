@@ -21,7 +21,7 @@ class Tempo {
 		bool rapido;
 
 		static constexpr float holdMinuto = .05f;
-		static constexpr float modTempoNormal = .01f, modTempoRapido = 3.f;
+		static constexpr float modTempoNormal = .01f, modTempoRapido = 1.f;
 
 		Writer texto;
 };

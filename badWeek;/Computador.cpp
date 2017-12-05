@@ -3,7 +3,6 @@
 
 #include <sstream>
 #include <fstream>
-#include <iostream>
 
 Computador::Computador(const sf::Vector2f& position, const sf::Vector2f& scale)
 	: sprite(*TextureManager::carregar("Imagens/Computer.png")),
@@ -46,7 +45,7 @@ void Computador::handleInput(const char letra) {
 		switch (paginaAtual) {
 			case PRINCIPAL:
 				if (letra == '1') {
-					lerCodigo("Codigos/1.cpp");
+					lerCodigo("Codigos/4.cpp");
 					paginaAtual = CODAR;
 				}
 			break;
@@ -75,6 +74,6 @@ void Computador::lerCodigo(const std::string& caminho) {
 	while (std::getline(arquivo, buffer, '\n')) 
 		sb << buffer << '\n';
 
-	std::cout << sb.str() << std::endl;
+	codigo.scaleToFit(sb.str(), .85f);
 	codigo.setMensagem(sb.str());
 }

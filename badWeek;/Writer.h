@@ -23,6 +23,8 @@ class Writer {
 		void setFontColor(sf::Color cor = sf::Color::White);
 
 		void setParams(const Writer& outro);
+
+		void scaleToFit(const std::string& mensagem, const float fracDiminuir);
 	private:
 		void ler(const std::string& mensagem);
 		void formatar();

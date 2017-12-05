@@ -1,7 +1,6 @@
 #include "Writer.h"
 #include "Manager.h"
 
-#include <iostream>
 #include <sstream>
 
 Writer::Writer(const std::string& mensagem, const sf::FloatRect& caixa, bool instantaneo) {
@@ -61,8 +60,6 @@ void Writer::ler(const std::string& mensagem) {
 		
 		if (bufferLinha.find('{') != std::string::npos)
 			tabular += 4;
-		
-		std::cout << tabular << std::endl;
 	}
 
 	palavraAtual = palavras.front();
@@ -70,7 +67,10 @@ void Writer::ler(const std::string& mensagem) {
 }
 
 bool Writer::checarDentro(const sf::FloatRect& outro) const {
-	return !(outro.left + outro.width >= caixa.left + caixa.width);
+	bool dentroLargura = outro.left >= caixa.left && outro.left + outro.width <= caixa.left + caixa.width;
+	bool dentroAltura = outro.top >= caixa.top && outro.top + outro.height <= caixa.top + caixa.height;
+
+	return (dentroLargura) && (dentroAltura);
 }
 
 void Writer::formatar() {
@@ -105,4 +105,14 @@ void Writer::setMensagem(const std::string& mensagem) {
 		return;
 
 	ler(mensagem);
+}
+
+void Writer::scaleToFit(const std::string& mensagem, const float fracDiminuir) {
+	sf::Text howItWillBe(texto);
+	howItWillBe.setString(mensagem);
+	
+	while (!checarDentro(howItWillBe.getGlobalBounds())) 
+		howItWillBe.setScale(howItWillBe.getScale() * fracDiminuir);
+
+	texto.setScale(howItWillBe.getScale());
 }

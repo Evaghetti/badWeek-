@@ -6,13 +6,20 @@
 
 Computador::Computador(const sf::Vector2f& position, const sf::Vector2f& scale)
 	: sprite(*TextureManager::carregar("Imagens/Computer.png")),
+	  navegador(*TextureManager::carregar("Imagens/Navegador.png")),
 	  principal("1) Codar\n2) Navegar Na internet.\n3) Mandar projeto pro seu chefe para avaliação.\n", sf::FloatRect(), true),
 	  codigo("", sf::FloatRect())
 {
+	screenOffset = position + sf::Vector2f(47.f * scale.x, 32.f * scale.y);
+	screenSize = sf::Vector2f(763.f * scale.x, 508.f * scale.y);
+
 	sprite.setPosition(position);
 	sprite.setScale(scale);
 
-	principal.setRect({ position + sf::Vector2f(50.f * scale.x, 30.f * scale.y), sf::Vector2f(768.f * scale.x, 518.f * scale.y) });
+	navegador.setPosition(screenOffset);
+	navegador.setScale(scale);
+	
+	principal.setRect({screenOffset, screenSize});
 	principal.setFontSize(30.0f * scale.x);
 	principal.setFontColor(sf::Color::Black);
 	principal.update();
@@ -35,6 +42,9 @@ void Computador::draw(sf::RenderTarget& target) {
 			case CODAR:
 				codigo.draw(target);
 				break;
+			case NAVEGAR:
+				target.draw(navegador);
+				break;
 		}
 	}
 		
@@ -48,6 +58,8 @@ void Computador::handleInput(const char letra) {
 					lerCodigo("Codigos/1.cpp");
 					paginaAtual = CODAR;
 				}
+				else if (letra == '2') 
+					paginaAtual = NAVEGAR;
 			break;
 			case CODAR:
 				if (!codigo.done())
@@ -56,6 +68,9 @@ void Computador::handleInput(const char letra) {
 					codigo.setMensagem("");
 					paginaAtual = PRINCIPAL;
 				}
+				break;
+			case NAVEGAR:
+				paginaAtual = PRINCIPAL;
 				break;
 		}
 	}
@@ -81,4 +96,8 @@ void Computador::lerCodigo(const std::string& caminho) {
 
 	codigo.scaleToFit(sb.str(), .85f);
 	codigo.setMensagem(sb.str());
+}
+
+Pagina Computador::getPaginaAtual() const {
+	return paginaAtual;
 }

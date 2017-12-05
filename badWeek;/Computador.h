@@ -16,12 +16,15 @@ class Computador {
 		void draw(sf::RenderTarget& target);
 		void handleInput(const char letra);
 		void handleMouse(const sf::Vector2f& mousePosition);
+
+		Pagina getPaginaAtual() const;
 	private:
 		void lerCodigo(const std::string& caminho);
 	private:
-		sf::Sprite sprite;
+		sf::Sprite sprite, navegador;
 		sf::FloatRect botaoLigar;
-		
+		sf::Vector2f screenOffset, screenSize;
+
 		Writer principal, codigo;
 		Pagina paginaAtual;
 

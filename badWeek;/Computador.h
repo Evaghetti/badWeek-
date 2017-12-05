@@ -17,10 +17,12 @@ class Computador {
 		void handleInput(const char letra);
 		void handleMouse(const sf::Vector2f& mousePosition);
 	private:
+		void lerCodigo(const std::string& caminho);
+	private:
 		sf::Sprite sprite;
-		sf::FloatRect botao;
+		sf::FloatRect botaoLigar;
 		
-		Writer menu;
+		Writer principal, codigo;
 		Pagina paginaAtual;
 
 		bool ligado = false;

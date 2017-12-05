@@ -1,18 +1,26 @@
 #include "Computador.h"
 #include "Manager.h"
 
+#include <sstream>
+#include <fstream>
+#include <iostream>
+
 Computador::Computador(const sf::Vector2f& position, const sf::Vector2f& scale)
 	: sprite(*TextureManager::carregar("Imagens/Computer.png")),
-	  menu("1) Codar\n2) Navegar Na internet.\n3) Mandar projeto pro seu chefe para avaliação.\n", {0.f, 0.f, 0.f, 0.f}, true)
+	  principal("1) Codar\n2) Navegar Na internet.\n3) Mandar projeto pro seu chefe para avaliação.\n", sf::FloatRect(), true),
+	  codigo(".", sf::FloatRect())
 {
 	sprite.setPosition(position);
 	sprite.setScale(scale);
 
-	menu.setRect({ position + sf::Vector2f(50.f * scale.x, 30.f * scale.y), sf::Vector2f(768.f * scale.x, 518.f * scale.y) });
-	menu.setFontSize(30.0f * scale.x);
-	menu.setFontColor(sf::Color::Black);
+	principal.setRect({ position + sf::Vector2f(50.f * scale.x, 30.f * scale.y), sf::Vector2f(768.f * scale.x, 518.f * scale.y) });
+	principal.setFontSize(30.0f * scale.x);
+	principal.setFontColor(sf::Color::Black);
+	principal.update();
 
-	botao = sf::FloatRect(position.x + 756.f * scale.x, position.y + 545.f * scale.y, 44.f * scale.x, 43.f * scale.y);
+	codigo.setParams(principal);
+
+	botaoLigar = sf::FloatRect(position.x + 756.f * scale.x, position.y + 545.f * scale.y, 44.f * scale.x, 43.f * scale.y);
 	
 	paginaAtual = PRINCIPAL;
 	ligado = false;
@@ -20,21 +28,53 @@ Computador::Computador(const sf::Vector2f& position, const sf::Vector2f& scale)
 
 void Computador::draw(sf::RenderTarget& target) {
 	target.draw(sprite);
-	if (ligado)
-		menu.draw(target);
+	if (ligado) {
+		switch (paginaAtual) {
+			case PRINCIPAL:
+				principal.draw(target);
+				break;
+			case CODAR:
+				codigo.draw(target);
+				break;
+		}
+	}
+		
 }
 
 void Computador::handleInput(const char letra) {
 	if (ligado) {
-		if (paginaAtual == PRINCIPAL) {
-			menu.update();
+		switch (paginaAtual) {
+			case PRINCIPAL:
+				if (letra == '1') {
+					lerCodigo("Codigos/1.cpp");
+					paginaAtual = CODAR;
+				}
+			break;
+			case CODAR:
+				codigo.update();
+				break;
 		}
 	}
 }
 
 void Computador::handleMouse(const sf::Vector2f& mousePosition) {
-	if (botao.contains(mousePosition)) {
+	if (botaoLigar.contains(mousePosition)) {
 		ligado = !ligado;
 		paginaAtual = PRINCIPAL;
 	}
+}
+
+void Computador::lerCodigo(const std::string& caminho) {
+	std::ifstream arquivo(caminho);
+	std::stringstream sb;
+	std::string buffer;
+
+	if (!arquivo.good())
+		throw std::runtime_error("Erro ao abrir arquivo");
+	
+	while (std::getline(arquivo, buffer, '\n')) 
+		sb << buffer << '\n';
+
+	std::cout << sb.str() << std::endl;
+	codigo.setMensagem(sb.str());
 }

@@ -1,6 +1,7 @@
 #include "GameState.h"
 #include "Writer.h"
 #include "Computador.h"
+#include "Tempo.h"
 
 class PlayState : public GameState {
 	public:
@@ -10,5 +11,6 @@ class PlayState : public GameState {
 		void update() override;
 	private:
 		Computador pc;
+		Tempo relogio;
 };
 

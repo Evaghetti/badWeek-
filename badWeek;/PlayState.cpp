@@ -1,6 +1,6 @@
 #include "PlayState.h"
 #include <SFML/Window/Event.hpp>
-#include <iostream>
+
 
 PlayState::PlayState(sf::RenderWindow* window) :
 	GameState(window),
@@ -12,6 +12,7 @@ void PlayState::draw() {
 	window->clear();
 
 	pc.draw(*window);
+	relogio.draw(*window);
 
 	window->display();
 }
@@ -31,4 +32,5 @@ void PlayState::handleInput() {
 
 void PlayState::update() {
 	const float deltaTime = getDeltaTime();
+	relogio.update(deltaTime);
 }

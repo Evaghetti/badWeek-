@@ -12,7 +12,8 @@
 
 class Writer {
 	public:
-		Writer(const std::string& mensagem, const sf::FloatRect& caixa, bool instantaneo = false);
+		Writer() = default;
+		Writer(const std::string& mensagem, const sf::FloatRect& caixa, bool instantaneo = false, const std::string& caminho = "Fontes/computador.ttf");
 		
 		void draw(sf::RenderTarget& target);
 		void update();
@@ -34,7 +35,7 @@ class Writer {
 	private:
 		std::vector<std::string> palavras;
 		std::shared_ptr<sf::Font> fonte;
-		std::string palavraAtual;
+		std::string palavraAtual, fraseToda;
 
 		sf::Text texto;
 		sf::FloatRect caixa;

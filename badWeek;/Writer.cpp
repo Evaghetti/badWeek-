@@ -3,8 +3,8 @@
 
 #include <sstream>
 #include <iostream>
-Writer::Writer(const std::string& mensagem, const sf::FloatRect& caixa, bool instantaneo) {
-	fonte = FontManager::carregar("Fontes/computador.ttf");
+Writer::Writer(const std::string& mensagem, const sf::FloatRect& caixa, bool instantaneo, const std::string& caminho) {
+	fonte = FontManager::carregar(caminho);
 	texto = sf::Text("", *fonte);
 	texto.setFillColor(sf::Color::White);
 	setRect(caixa);
@@ -18,23 +18,23 @@ void Writer::update() {
 		if (!palavraAtual.empty())
 			escrever();
 	}
-	else {
-		while (!palavraAtual.empty())
-			escrever();
-	}
+	else 
+		texto.setString(fraseToda);
 }
 
 void Writer::escrever() {
-	formatar();
-	texto.setString(texto.getString() + palavraAtual.front());
-	palavraAtual.erase(palavraAtual.begin());
+	if (!instantaneo) {
+		formatar();
+		texto.setString(texto.getString() + palavraAtual.front());
+		palavraAtual.erase(palavraAtual.begin());
 
-	if (palavraAtual.empty() && !palavras.empty()) {
-		palavraAtual = palavras.front();
-		palavras.erase(palavras.begin());
+		if (palavraAtual.empty() && !palavras.empty()) {
+			palavraAtual = palavras.front();
+			palavras.erase(palavras.begin());
 
-		if (texto.getString()[texto.getString().getSize() - 1] != '\n')
-			texto.setString(texto.getString() + " ");
+			if (texto.getString()[texto.getString().getSize() - 1] != '\n')
+				texto.setString(texto.getString() + " ");
+		}
 	}
 }
 
@@ -46,6 +46,7 @@ void Writer::ler(const std::string& mensagem) {
 	std::stringstream linhas(mensagem), linhaAtual;
 	std::string bufferLinha, bufferPalavra;
 	int tabular = 0;
+	fraseToda = mensagem;
 
 	while (std::getline(linhas, bufferLinha, '\n')) {
 		linhaAtual = std::stringstream(bufferLinha);
@@ -105,7 +106,7 @@ void Writer::setParams(const Writer & outro) {
 }
 
 void Writer::setMensagem(const std::string& mensagem) {
-	if (!palavras.empty())
+	if (!palavras.empty() && !instantaneo)
 		return;
 
 	texto.setString("");

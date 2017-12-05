@@ -110,3 +110,7 @@ void Computador::lerCodigo(const std::string& caminho) {
 Pagina Computador::getPaginaAtual() const {
 	return paginaAtual;
 }
+
+bool Computador::taLigado() const {
+	return ligado;
+}

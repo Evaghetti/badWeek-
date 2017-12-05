@@ -9,10 +9,10 @@ Tempo::Tempo(int dia, int hora, int minuto) {
 	this->dia = dia;
 	this->hora = hora;
 	this->minuto = minuto;
-	this->modificadorTempo = 0.01f;
 	this->tempoPassado = 0.f;
+	this->rapido = false;
 
-	texto = Writer(horarioToString(), sf::FloatRect(0.f, 0.f, 100.f, 100.f), true, "Fontes/relogio.ttf");
+	texto = Writer(horarioToString(), sf::FloatRect(10.f, 10.f, 100.f, 100.f), true, "Fontes/relogio.ttf");
 	texto.setFontColor(sf::Color::White);
 }
 
@@ -36,8 +36,10 @@ void Tempo::draw(sf::RenderTarget& target) {
 }
 
 void Tempo::update(const float deltaTime) {
-	tempoPassado += deltaTime * modificadorTempo;
-
+	if (!rapido)
+		tempoPassado += deltaTime * modTempoNormal;
+	else
+		tempoPassado += deltaTime * modTempoRapido;
 	if (tempoPassado > holdMinuto) {
 		minuto++;
 		if (minuto >= 60) {
@@ -54,4 +56,8 @@ void Tempo::update(const float deltaTime) {
 
 	texto.setMensagem(horarioToString());
 	texto.update();
+}
+
+void Tempo::setRapido(bool rapido) {
+	this->rapido = rapido;
 }

@@ -33,4 +33,9 @@ void PlayState::handleInput() {
 void PlayState::update() {
 	const float deltaTime = getDeltaTime();
 	relogio.update(deltaTime);
+
+	if (!pc.taLigado() || pc.getPaginaAtual() != PRINCIPAL)
+		relogio.setRapido(true);
+	else
+		relogio.setRapido(false);
 }

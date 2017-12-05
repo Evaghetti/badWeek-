@@ -11,11 +11,16 @@ class Tempo {
 		void update(const float deltaTime);
 		void draw(sf::RenderTarget& target);
 
+		void setRapido(bool rapido);
+	private:
 		std::string horarioToString() const;
 	private:
 		int dia, hora, minuto;
-		float modificadorTempo, tempoPassado;
+		float tempoPassado;
+		bool rapido;
+
 		static constexpr float holdMinuto = .05f;
+		static constexpr float modTempoNormal = .01f, modTempoRapido = 1.f;
 
 		Writer texto;
 };

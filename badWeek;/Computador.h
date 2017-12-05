@@ -19,6 +19,7 @@ class Computador {
 		void handleMouse(const sf::Vector2f& mousePosition);
 
 		Pagina getPaginaAtual() const;
+		bool taLigado() const;
 	private:
 		void lerCodigo(const std::string& caminho);
 	private:

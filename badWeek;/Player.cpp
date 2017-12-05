@@ -9,6 +9,7 @@ Player::Player() {
 
 	felicidade = 100.f;
 	sono = 0.f;
+	quantCodigos = 0;
 
 	porcSono = random.range(2.f, 4.f);
 	porcFelicidade = random.range(4.f, 8.f);
@@ -40,7 +41,8 @@ void Player::draw(sf::RenderTarget& target) {
 std::string Player::toString() const {
 	std::stringstream sb;
 	
-	sb << "FELICIDADE: " << (int)felicidade << "\n\n" << "SONO: " << (int)sono;
+	sb << "FELICIDADE: " << (int)felicidade << "\n\n" << "SONO: " << (int)sono
+	   << "\n\n" << "CODIGOS FEITOS: " << quantCodigos;
 	return sb.str();
 }
 

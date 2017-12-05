@@ -1,8 +1,6 @@
 #include "PlayState.h"
 #include <SFML/Window/Event.hpp>
 
-#include <iostream>
-
 PlayState::PlayState(sf::RenderWindow* window) :
 	GameState(window),
 	pc({ 215.0f, 136.0f }, { .5f, .5f }),
@@ -51,7 +49,9 @@ void PlayState::update() {
 	}
 	else 
 		player.modificarSono(deltaTime * relogio.getModificador(), -1);
-
+	
+	if (pc.terminouProgramar())
+		player.quantCodigos++;
 	player.update();
 }
 

@@ -13,6 +13,7 @@ struct Player {
 
 	bool morreu() const;
 
+	int quantCodigos;
 	float sono, porcSono;
 	float felicidade, porcFelicidade;
 	

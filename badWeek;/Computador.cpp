@@ -31,6 +31,7 @@ Computador::Computador(const sf::Vector2f& position, const sf::Vector2f& scale)
 	
 	paginaAtual = PRINCIPAL;
 	ligado = true;
+	terminouCode = false;
 }
 
 void Computador::draw(sf::RenderTarget& target) {
@@ -55,6 +56,7 @@ void Computador::handleInput(const char letra) {
 	if (ligado) {
 		switch (paginaAtual) {
 			case PRINCIPAL:
+				terminouCode = false;
 				if (letra == '1') {
 					std::stringstream caminho;
 					caminho << "Codigos/" << random.range(1, 5) << ".cpp";
@@ -79,6 +81,7 @@ void Computador::handleInput(const char letra) {
 				else {
 					codigo.setMensagem("");
 					paginaAtual = PRINCIPAL;
+					terminouCode = true;
 				}
 				break;
 			case NAVEGAR:
@@ -119,4 +122,12 @@ Pagina Computador::getPaginaAtual() const {
 
 bool Computador::taLigado() const {
 	return ligado;
+}
+
+bool Computador::terminouProgramar() {
+	if (terminouCode) {
+		terminouCode = false;
+		return true;
+	}
+	return false;
 }

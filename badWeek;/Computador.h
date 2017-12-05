@@ -20,6 +20,7 @@ class Computador {
 
 		Pagina getPaginaAtual() const;
 		bool taLigado() const;
+		bool terminouProgramar();
 	private:
 		void lerCodigo(const std::string& caminho);
 	private:
@@ -31,6 +32,6 @@ class Computador {
 		Writer principal, codigo;
 		Pagina paginaAtual;
 
-		bool ligado = false;
+		bool ligado, terminouCode;
 };
 

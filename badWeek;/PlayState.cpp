@@ -4,7 +4,8 @@
 
 PlayState::PlayState(sf::RenderWindow* window) :
 	GameState(window),
-	pc({ 215.0f, 136.0f }, {.5f, .5f}) 
+	pc({ 215.0f, 136.0f }, { .5f, .5f }),
+	relogio(1, 6, 30)
 {
 }
 
@@ -38,4 +39,8 @@ void PlayState::update() {
 		relogio.setRapido(true);
 	else
 		relogio.setRapido(false);
+}
+
+bool PlayState::works() const {
+	return GameState::works() && !(relogio.acabouTempo() || pc.getPaginaAtual() == MANDAR_PROJETO);
 }

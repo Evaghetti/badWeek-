@@ -61,3 +61,7 @@ void Tempo::update(const float deltaTime) {
 void Tempo::setRapido(bool rapido) {
 	this->rapido = rapido;
 }
+
+bool Tempo::acabouTempo() const {
+	return dia > 3;
+}

@@ -11,7 +11,7 @@ class GameState {
 		virtual void draw() = 0;
 
 		float getDeltaTime();
-		bool works() const;
+		virtual bool works() const;
 	private:
 		std::chrono::steady_clock::time_point timePoint;
 	protected:

@@ -65,8 +65,10 @@ void Computador::handleInput(const char letra) {
 						paginaAtual = PRINCIPAL;
 					}
 				}
-				else if (letra == '2') 
+				else if (letra == '2')
 					paginaAtual = NAVEGAR;
+				else if (letra == '3')
+					paginaAtual = MANDAR_PROJETO;
 			break;
 			case CODAR:
 				if (!codigo.done()) {
@@ -80,6 +82,9 @@ void Computador::handleInput(const char letra) {
 				break;
 			case NAVEGAR:
 				paginaAtual = PRINCIPAL;
+				break;
+			case MANDAR_PROJETO:
+				paginaAtual = MANDAR_PROJETO;
 				break;
 		}
 	}

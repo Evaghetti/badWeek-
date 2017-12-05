@@ -12,6 +12,7 @@ class Tempo {
 		void draw(sf::RenderTarget& target);
 
 		void setRapido(bool rapido);
+		bool acabouTempo() const;
 	private:
 		std::string horarioToString() const;
 	private:
@@ -20,7 +21,7 @@ class Tempo {
 		bool rapido;
 
 		static constexpr float holdMinuto = .05f;
-		static constexpr float modTempoNormal = .01f, modTempoRapido = 1.f;
+		static constexpr float modTempoNormal = .01f, modTempoRapido = 3.f;
 
 		Writer texto;
 };

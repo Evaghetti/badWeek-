@@ -9,6 +9,7 @@ class PlayState : public GameState {
 		void draw() override;
 		void handleInput() override;
 		void update() override;
+		bool works() const override;
 	private:
 		Computador pc;
 		Tempo relogio;

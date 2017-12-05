@@ -24,12 +24,12 @@ void Player::update() {
 }
 
 void Player::modificarSono(const float deltaTime, const int mod) {
-	if (sono >= 0.f && sono <= 120.f)
+	if ((mod < 0 && sono > 0.f) || (mod > 0 && sono < 120.f))
 		sono += (deltaTime * porcSono) * mod;
 }
 
 void Player::modificarFelicidade(const float deltaTime, const int mod) {
-	if (felicidade > -20.f && felicidade <= 100.f)
+	if ((mod < 0 && felicidade > -20.f) || (mod > 0 && felicidade < 100.f))
 		felicidade += (deltaTime * porcFelicidade) * mod;
 }
 

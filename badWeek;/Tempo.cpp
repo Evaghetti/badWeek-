@@ -2,7 +2,6 @@
 
 #include "Manager.h"
 
-#include <iostream>
 #include <sstream>
 
 Tempo::Tempo(int dia, int hora, int minuto) {

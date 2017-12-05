@@ -2,7 +2,7 @@
 #include "Manager.h"
 
 #include <sstream>
-#include <iostream>
+
 Writer::Writer(const std::string& mensagem, const sf::FloatRect& caixa, bool instantaneo, const std::string& caminho) {
 	fonte = FontManager::carregar(caminho);
 	texto = sf::Text("", *fonte);

@@ -29,7 +29,7 @@ Computador::Computador(const sf::Vector2f& position, const sf::Vector2f& scale)
 	botaoLigar = sf::FloatRect(position.x + 756.f * scale.x, position.y + 545.f * scale.y, 44.f * scale.x, 43.f * scale.y);
 	
 	paginaAtual = PRINCIPAL;
-	ligado = false;
+	ligado = true;
 }
 
 void Computador::draw(sf::RenderTarget& target) {

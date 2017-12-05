@@ -1,19 +1,12 @@
 #include "Engine.h"
 
-#include <iostream>
-#include <exception>
 #include "Rand.h"
 
 Engine::Engine(const std::string& nome, int largura, int altura)
 	: window(sf::VideoMode(largura, altura), nome),
 	  playState(&window)
 {
-	try {
-		run();
-	}
-	catch (std::exception& e) {
-		std::cout << "Teste: " << e.what();
-	}
+	run();
 }
 
 void Engine::run() {

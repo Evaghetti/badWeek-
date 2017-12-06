@@ -1,5 +1,4 @@
-#include "PlayState.h"
-#include "Judge.h"
+#include "GameState.h"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
@@ -12,6 +11,7 @@ class Engine {
 		void run();
 	private:
 		sf::RenderWindow window;
-		Judge judge;
+		std::vector<GameState*> gameStates;
+		GameState* gameState;
 };
 

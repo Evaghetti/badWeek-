@@ -1,24 +1,27 @@
 #include "Engine.h"
-
-#include "Rand.h"
+#include "PlayState.h"
+#include "Judge.h"
 
 Engine::Engine(const std::string& nome, int largura, int altura)
-	: window(sf::VideoMode(largura, altura), nome),
-	  judge(&window)
+	: window(sf::VideoMode(largura, altura), nome)
+	  
 {
-	Player player;
-	player.quantCodigos = 14;
-	player.felicidade = -20.f;
-	player.sono = 121.f;
-
-	judge.julgar(player);
+	gameStates.push_back(new Judge(&window));
+	gameStates.push_back(new PlayState(&window));
+	gameState = gameStates.front();
 	run();
 }
 
 void Engine::run() {
-	while (judge.works()) {
-		judge.handleInput();
-		judge.update();
-		judge.draw();
+	while (!gameStates.empty()) {
+		while (gameState->works()) {
+			gameState->handleInput();
+			gameState->update();
+			gameState->draw();
+		}
+
+		gameStates.erase(gameStates.begin());
+		if (!gameStates.empty())
+			gameState = gameStates.front();
 	}
 }

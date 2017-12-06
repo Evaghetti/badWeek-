@@ -72,10 +72,10 @@ void Writer::ler(const std::string& mensagem) {
 }
 
 bool Writer::checarDentro(const sf::FloatRect& outro) const {
-	bool dentroLargura = outro.left >= caixa.left && outro.left + outro.width <= caixa.left + caixa.width;
-	bool dentroAltura = outro.top >= caixa.top && outro.top + outro.height <= caixa.top + caixa.height;
+	bool dentroLargura = (caixa.left >= outro.left && outro.left + outro.width <= caixa.left + caixa.width);
+	bool dentroAltura = (outro.top >= caixa.top && outro.top + outro.height <= caixa.top + caixa.height);
 
-	return dentroLargura || dentroAltura;
+	return dentroLargura && dentroAltura;
 }
 
 void Writer::formatar() {

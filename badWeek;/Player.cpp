@@ -47,5 +47,5 @@ std::string Player::toString() const {
 }
 
 bool Player::morreu() const {
-	return sono > 120.f || felicidade < -20.f;
+	return sono >= 120.f || felicidade <= -20.f;
 }

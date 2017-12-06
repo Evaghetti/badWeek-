@@ -15,5 +15,7 @@ class Judge : public GameState {
 	private:
 		Writer texto;
 		bool sair;
+
+		static constexpr int quantConseguir = 30;
 };
 

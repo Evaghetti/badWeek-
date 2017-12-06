@@ -1,4 +1,5 @@
 #include "PlayState.h"
+#include "Judge.h"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
@@ -11,6 +12,6 @@ class Engine {
 		void run();
 	private:
 		sf::RenderWindow window;
-		PlayState playState;
+		Judge judge;
 };
 

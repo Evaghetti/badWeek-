@@ -122,6 +122,7 @@
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Computador.cpp" />
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Engine.cpp" />
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\GameState.cpp" />
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Judge.cpp" />
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\main.cpp" />
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Player.cpp" />
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\PlayState.cpp" />
@@ -133,6 +134,7 @@
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Computador.h" />
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Engine.h" />
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\GameState.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Judge.h" />
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Manager.h" />
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Player.h" />
     <ClInclude Include="..\..\badWeek%3b\badWeek%3b\PlayState.h" />

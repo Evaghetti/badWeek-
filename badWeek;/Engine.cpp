@@ -4,15 +4,15 @@
 
 Engine::Engine(const std::string& nome, int largura, int altura)
 	: window(sf::VideoMode(largura, altura), nome),
-	  playState(&window)
+	  judge(&window)
 {
 	run();
 }
 
 void Engine::run() {
-	while (playState.works()) {
-		playState.handleInput();
-		playState.update();
-		playState.draw();
+	while (judge.works()) {
+		judge.handleInput();
+		judge.update();
+		judge.draw();
 	}
 }

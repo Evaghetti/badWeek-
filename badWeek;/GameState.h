@@ -1,3 +1,4 @@
+#pragma once
 #include <SFML\Graphics\RenderWindow.hpp>
 #include <chrono>
 #include <string>

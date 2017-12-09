@@ -88,7 +88,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Enzo\Desktop\Programação\Jogos\badWeek-\badWeek%3b\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Users\Enzo\Desktop\Programação\Jogos\badWeek-\badWeek%3b\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>openal32.lib;sfml-main-d.lib;sfml-system-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -114,43 +119,44 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Enzo\Desktop\Programação\Jogos\badWeek-\badWeek%3b\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\Enzo\Desktop\Programação\Jogos\badWeek-\badWeek%3b\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>openal32.lib;sfml-main.lib;sfml-system.lib;sfml-graphics.lib;sfml-audio.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\main.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Computador.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Engine.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\GameState.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Random.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Writer.cpp" />
-    <ClCompile Include="Source\JudgeState.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Player.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\PlayState.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Tempo.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Random.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\resource.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Computador.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Engine.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\GameState.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Manager.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Random.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Writer.h" />
-    <ClInclude Include="Source\JudgeState.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Player.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\PlayState.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Tempo.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="..\..\badWeek%3b\badWeek%3b\badWeek%3b.rc" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="..\..\badWeek%3b\badWeek%3b\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\badWeek%3b\resource.h" />
+    <ClInclude Include="..\badWeek%3b\Source\Computador.h" />
+    <ClInclude Include="..\badWeek%3b\Source\Engine.h" />
+    <ClInclude Include="..\badWeek%3b\Source\FrameWork\GameState.h" />
+    <ClInclude Include="..\badWeek%3b\Source\FrameWork\GUI\Widget.h" />
+    <ClInclude Include="..\badWeek%3b\Source\FrameWork\Manager.h" />
+    <ClInclude Include="..\badWeek%3b\Source\FrameWork\Random.h" />
+    <ClInclude Include="..\badWeek%3b\Source\FrameWork\Writer.h" />
+    <ClInclude Include="..\badWeek%3b\Source\JudgeState.h" />
+    <ClInclude Include="..\badWeek%3b\Source\Player.h" />
+    <ClInclude Include="..\badWeek%3b\Source\PlayState.h" />
+    <ClInclude Include="..\badWeek%3b\Source\Tempo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\badWeek%3b\main.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\Computador.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\Engine.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\FrameWork\GameState.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\FrameWork\GUI\Widget.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\FrameWork\Random.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\FrameWork\Writer.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\JudgeState.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\Player.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\PlayState.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\Tempo.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -80,6 +80,7 @@
     <Link>
       <AdditionalLibraryDirectories>.\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-audio-d.lib;sfml-window-d.lib;sfml-system-d.lib;openal32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -102,6 +103,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>.\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-main.lib;sfml-graphics.lib;sfml-audio.lib;sfml-window.lib;sfml-system.lib;openal32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -118,26 +121,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Computador.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Engine.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\GameState.cpp" />
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\main.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Player.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\PlayState.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Rand.cpp" />
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Tempo.cpp" />
-    <ClCompile Include="Writer.cpp" />
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Computador.cpp" />
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Engine.cpp" />
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\GameState.cpp" />
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Random.cpp" />
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Writer.cpp" />
+    <ClCompile Include="Source\JudgeState.cpp" />
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Player.cpp" />
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\PlayState.cpp" />
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Tempo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Computador.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Engine.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\GameState.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Manager.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Player.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\PlayState.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Rand.h" />
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Tempo.h" />
-    <ClInclude Include="Writer.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Random.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\resource.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Computador.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Engine.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\GameState.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Manager.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Random.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Writer.h" />
+    <ClInclude Include="Source\JudgeState.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Player.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\PlayState.h" />
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Tempo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\badWeek%3b\badWeek%3b\badWeek%3b.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\badWeek%3b\badWeek%3b\icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

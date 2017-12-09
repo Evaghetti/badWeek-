@@ -18,58 +18,80 @@
     <ClCompile Include="..\..\badWeek%3b\badWeek%3b\main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\GameState.cpp">
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Engine.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Computador.cpp">
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Player.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\PlayState.cpp">
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\PlayState.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Engine.cpp">
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Tempo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Writer.cpp">
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\Computador.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Rand.cpp">
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\GameState.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Tempo.cpp">
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Random.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Player.cpp">
+    <ClCompile Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Writer.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\JudgeState.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\GameState.h">
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\resource.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Manager.h">
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Random.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Computador.h">
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Computador.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\PlayState.h">
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Engine.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Engine.h">
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Player.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Writer.h">
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\PlayState.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Rand.h">
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\Tempo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Tempo.h">
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\GameState.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Player.h">
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Manager.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Random.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\badWeek%3b\badWeek%3b\Source\FrameWork\Writer.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\JudgeState.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\badWeek%3b\badWeek%3b\badWeek%3b.rc">
+      <Filter>Arquivos de Recurso</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\badWeek%3b\badWeek%3b\icon.ico">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
   </ItemGroup>
 </Project>

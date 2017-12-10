@@ -12,6 +12,7 @@ class Button : public Widget {
 		Button(const sf::Vector2f& position, const sf::Vector2f& tamanho, const std::string& text = {"Você digitou nada."});
 	
 		void draw(sf::RenderTarget& target) override;
+		void update() override;
 	
 		void handleInput() override;
 		void handleMouse(const sf::Vector2f& mousePos) override;

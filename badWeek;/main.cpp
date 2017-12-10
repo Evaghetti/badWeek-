@@ -18,10 +18,14 @@ int main() {
 				window.close();
 			if (e.type == sf::Event::MouseMoved || e.type == sf::Event::MouseButtonPressed)
 				teste->handleMouse(sf::Vector2f(sf::Mouse::getPosition(window)));
+			if (e.type == sf::Event::KeyPressed)
+				teste->handleInput();
 		}
 
 		if (teste->foiUsado()) 
 			std::cout << "Usou a caixa :D" << std::endl;
+
+		teste->update();
 
 		window.clear();
 		teste->draw(window);

@@ -1,5 +1,6 @@
 #include "Button.h"
 
+#include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/Mouse.hpp>
 
 Button::Button(const sf::Vector2f& position, const sf::Vector2f& tamanho, 
@@ -14,7 +15,10 @@ Button::Button(const sf::Vector2f& position, const sf::Vector2f& tamanho,
 }
 
 void Button::handleInput() {
-
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+		buttonBox.setFillColor(sf::Color::Blue);
+		usado = true;
+	}
 }
 
 void Button::handleMouse(const sf::Vector2f& mousePos) {
@@ -23,15 +27,17 @@ void Button::handleMouse(const sf::Vector2f& mousePos) {
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 			usado = true;
 	}
-	else {
+	else
 		buttonBox.setFillColor(sf::Color::Cyan);
-		usado = false;
-	}
 }
 
 void Button::draw(sf::RenderTarget& target) {
 	target.draw(buttonBox);
 	buttonText.draw(target);
+}
+
+void Button::update() {
+	Widget::update();
 }
 
 bool Button::foiUsado() const {

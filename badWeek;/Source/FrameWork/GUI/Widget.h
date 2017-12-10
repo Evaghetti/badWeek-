@@ -8,6 +8,7 @@ class Widget {
 		Widget(const sf::Vector2f& position);
 
 		virtual void draw(sf::RenderTarget& target) = 0;
+		virtual void update();
 
 		virtual void handleInput() = 0;
 		virtual void handleMouse(const sf::Vector2f& mousePos) = 0;

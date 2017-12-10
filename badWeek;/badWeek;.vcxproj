@@ -136,6 +136,7 @@
     <ClInclude Include="..\badWeek%3b\Source\Computador.h" />
     <ClInclude Include="..\badWeek%3b\Source\Engine.h" />
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\GameState.h" />
+    <ClInclude Include="..\badWeek%3b\Source\FrameWork\GUI\Button.h" />
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\GUI\Widget.h" />
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\Manager.h" />
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\Random.h" />
@@ -150,6 +151,7 @@
     <ClCompile Include="..\badWeek%3b\Source\Computador.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\Engine.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\GameState.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\FrameWork\GUI\Button.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\GUI\Widget.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\Random.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\Writer.cpp" />

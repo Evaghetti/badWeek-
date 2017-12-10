@@ -11,8 +11,8 @@ class Widget {
 
 		virtual void handleInput() = 0;
 		virtual void handleMouse(const sf::Vector2f& mousePos) = 0;
-	protected:
-		virtual bool mouseOver(const sf::Vector2f& mousePos) const = 0;
+		virtual bool foiUsado() const = 0;
 	protected:
 		sf::Vector2f position;
+		bool usado;
 };

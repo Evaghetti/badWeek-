@@ -4,7 +4,7 @@
 #include <string>
 #include <memory>
 
-#include "FrameWork/Writer.h"
+#include "FrameWork/GUI/Writer.h"
 
 class Tempo {
 	public:

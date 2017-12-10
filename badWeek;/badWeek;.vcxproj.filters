@@ -47,9 +47,6 @@
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\Random.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\badWeek%3b\Source\FrameWork\Writer.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
     <ClInclude Include="..\badWeek%3b\resource.h">
       <Filter>Arquivos de Recurso</Filter>
     </ClInclude>
@@ -59,15 +56,15 @@
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\GUI\Button.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="..\badWeek%3b\Source\FrameWork\GUI\Writer.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\GameState.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\Random.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="..\badWeek%3b\Source\FrameWork\Writer.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="..\badWeek%3b\Source\Computador.cpp">
@@ -95,6 +92,9 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\GUI\Button.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\badWeek%3b\Source\FrameWork\GUI\Writer.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>

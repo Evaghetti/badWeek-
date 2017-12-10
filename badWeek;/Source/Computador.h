@@ -4,7 +4,7 @@
 #include <SFML/Audio/SoundBuffer.hpp>
 #include <SFML/Audio/Sound.hpp>
 
-#include "FrameWork/Writer.h"
+#include "FrameWork/GUI/Writer.h"
 #include "FrameWork/Random.h"
 
 enum Pagina {

@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics/RenderTarget.hpp>
-#include "FrameWork/Writer.h"
+#include "FrameWork/GUI/Writer.h"
 #include <fstream>
 
 class Player {

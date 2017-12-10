@@ -1,6 +1,6 @@
 #pragma once
 #include "Widget.h"
-#include "../Writer.h"
+#include "Writer.h"
 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/System/Vector2.hpp>

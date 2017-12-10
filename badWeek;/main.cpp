@@ -8,8 +8,8 @@
 
 int main() {
 	//Engine("badWeek;", 640, 480);
-	sf::RenderWindow window(sf::VideoMode(640, 480), "GUI", sf::Style::Close | sf::Style::Titlebar);
-	Widget* teste = new Button({ 150.f, 200.f }, { 300.f, 100.f }, "Agora digitou algo :D");
+	sf::RenderWindow window(sf::VideoMode(640, 480), "GUI");
+	Widget* teste = new Button({ 150.f, 200.f }, { 300.f, 150.f }, "Agora digitou algo muito legal :D");
 	while (window.isOpen()) {
 		sf::Event e;
 

@@ -1,6 +1,6 @@
 #include "Writer.h"
 
-#include "Manager.h"
+#include "../Manager.h"
 
 #include <sstream>
 
@@ -19,12 +19,15 @@ void Writer::update() {
 		if (!palavraAtual.empty())
 			escrever();
 	}
-	else 
-		texto.setString(fraseToda);
+	else {
+		while (!done())
+			escrever();
+	}
+		
 }
 
 void Writer::escrever() {
-	if (!instantaneo) {
+	//if (!instantaneo) {
 		formatar();
 		texto.setString(texto.getString() + palavraAtual.front());
 		palavraAtual.erase(palavraAtual.begin());
@@ -36,7 +39,7 @@ void Writer::escrever() {
 			if (texto.getString()[texto.getString().getSize() - 1] != '\n')
 				texto.setString(texto.getString() + " ");
 		}
-	}
+	//}
 }
 
 void Writer::draw(sf::RenderTarget& target) {

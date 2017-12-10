@@ -1,5 +1,5 @@
+#include "FrameWork/GUI/Writer.h"
 #include "FrameWork/GameState.h"
-#include "FrameWork/Writer.h"
 #include "Computador.h"
 #include "Player.h"
 #include "Tempo.h"

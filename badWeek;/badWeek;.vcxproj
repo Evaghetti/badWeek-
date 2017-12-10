@@ -138,9 +138,9 @@
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\GameState.h" />
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\GUI\Button.h" />
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\GUI\Widget.h" />
+    <ClInclude Include="..\badWeek%3b\Source\FrameWork\GUI\Writer.h" />
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\Manager.h" />
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\Random.h" />
-    <ClInclude Include="..\badWeek%3b\Source\FrameWork\Writer.h" />
     <ClInclude Include="..\badWeek%3b\Source\JudgeState.h" />
     <ClInclude Include="..\badWeek%3b\Source\Player.h" />
     <ClInclude Include="..\badWeek%3b\Source\PlayState.h" />
@@ -153,8 +153,8 @@
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\GameState.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\GUI\Button.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\GUI\Widget.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\FrameWork\GUI\Writer.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\Random.cpp" />
-    <ClCompile Include="..\badWeek%3b\Source\FrameWork\Writer.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\JudgeState.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\Player.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\PlayState.cpp" />

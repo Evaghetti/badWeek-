@@ -16,8 +16,10 @@ class JudgeState : public GameState {
 	private:
 		Writer texto;
 		Player player;
+		float tempoPassado;
 		bool sair, leu;
 
 		static constexpr int quantConseguir = 10;
+		static constexpr float holdTime = .01f;
 };
 

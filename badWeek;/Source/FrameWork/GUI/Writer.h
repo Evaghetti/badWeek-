@@ -29,6 +29,7 @@ class Writer {
 		void ler(const std::string& mensagem);
 		void formatar();
 		void escrever();
+
 		bool checarDentro(const sf::FloatRect& outro) const;
 	private:
 		std::vector<std::string> palavras;

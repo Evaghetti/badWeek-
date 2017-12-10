@@ -3,6 +3,7 @@
 #include "../Manager.h"
 
 #include <sstream>
+#include <iostream>
 
 Writer::Writer(const std::string& mensagem, const sf::FloatRect& caixa, bool instantaneo, const std::string& caminho) {
 	fonte = FontManager::carregar(caminho);
@@ -23,23 +24,20 @@ void Writer::update() {
 		while (!done())
 			escrever();
 	}
-		
 }
 
 void Writer::escrever() {
-	//if (!instantaneo) {
-		formatar();
-		texto.setString(texto.getString() + palavraAtual.front());
-		palavraAtual.erase(palavraAtual.begin());
+	formatar();
+	texto.setString(texto.getString() + palavraAtual.front());
+	palavraAtual.erase(palavraAtual.begin());
 
-		if (palavraAtual.empty() && !palavras.empty()) {
-			palavraAtual = palavras.front();
-			palavras.erase(palavras.begin());
+	if (palavraAtual.empty() && !palavras.empty()) {
+		palavraAtual = palavras.front();
+		palavras.erase(palavras.begin());
 
-			if (texto.getString()[texto.getString().getSize() - 1] != '\n')
-				texto.setString(texto.getString() + " ");
-		}
-	//}
+		if (texto.getString()[texto.getString().getSize() - 1] != '\n')
+			texto.setString(texto.getString() + " ");
+	}
 }
 
 void Writer::draw(sf::RenderTarget& target) {
@@ -59,7 +57,7 @@ void Writer::ler(const std::string& mensagem) {
 
 		if (tabular > 0)
 			palavras.push_back(std::string(tabular, ' '));
-		while (linhaAtual >> bufferPalavra)
+		while (linhaAtual >> bufferPalavra) 
 			palavras.push_back(bufferPalavra);
 		palavras.back() += '\n';
 		
@@ -76,7 +74,7 @@ void Writer::ler(const std::string& mensagem) {
 }
 
 bool Writer::checarDentro(const sf::FloatRect& outro) const {
-	bool dentroLargura = (caixa.left >= outro.left && outro.left + outro.width <= caixa.left + caixa.width);
+	bool dentroLargura = (outro.left >= caixa.left && outro.left + outro.width <= caixa.left + caixa.width);
 	bool dentroAltura = (outro.top >= caixa.top && outro.top + outro.height <= caixa.top + caixa.height);
 
 	return dentroLargura && dentroAltura;
@@ -85,8 +83,7 @@ bool Writer::checarDentro(const sf::FloatRect& outro) const {
 void Writer::formatar() {
 	sf::Text temp(texto);
 	temp.setString(temp.getString() + " " + palavraAtual);
-	
-	if (!checarDentro(temp.getGlobalBounds()))
+	if (!checarDentro(temp.getGlobalBounds())) 
 		texto.setString(texto.getString() + "\n");
 }
 

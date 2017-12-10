@@ -7,10 +7,12 @@
 
 JudgeState::JudgeState(sf::RenderWindow* window) 
 	: GameState(window),
-	  texto("", sf::FloatRect(0.f, 0.f, 640.f, 480.f), false, "Fontes/UI.ttf")
+	  texto("", sf::FloatRect(1.f, 1.f, 640.f, 480.f), false, "Fontes/UI.ttf")
 {
 	leu = false;
 	sair = false;
+
+	tempoPassado = 0.f;
 }
 
 void JudgeState::draw() {
@@ -31,8 +33,13 @@ void JudgeState::update() {
 		julgar();
 		leu = true;
 	}
-	else
-		texto.update();
+	else {
+		tempoPassado += deltaTime;
+		if (tempoPassado > holdTime) {
+			texto.update();
+			tempoPassado = 0.f;
+		}
+	}
 }
 
 void JudgeState::handleInput() {
@@ -93,7 +100,6 @@ void JudgeState::julgar() {
 		fraseFinal << "VOCÊ MORREU.";
 		texto.setFontColor(sf::Color::Red);
 	}
-
 	texto.setMensagem(fraseFinal.str());
 }
 

@@ -12,7 +12,7 @@ Engine::Engine(const std::string& nome, int largura, int altura)
 {
 	sf::Image icon;
 	icon.loadFromFile("icon.bmp");
-	gameStates.push_back(std::make_unique<PlayState>(&window));
+	//gameStates.push_back(std::make_unique<PlayState>(&window));
 	gameStates.push_back(std::make_unique<JudgeState>(&window));
 
 	window.setIcon(850, 689, icon.getPixelsPtr());

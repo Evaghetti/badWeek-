@@ -13,7 +13,7 @@ Player::Player() {
 	porcSono = random.range(2.f, 4.f);
 	porcFelicidade = random.range(4.f, 6.f);
 
-	texto = Writer(toString(), { 10.f, 100.f, 100.f, 100.f }, true, "Fontes/relogio.ttf");
+	texto = Writer(toString(), { 10.f, 100.f, 250.f, 500.f }, true, "Fontes/relogio.ttf");
 	texto.update();
 	texto.setFontColor(sf::Color::White);
 }

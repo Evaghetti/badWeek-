@@ -3,7 +3,6 @@
 #include "FrameWork/Manager.h"
 
 #include <sstream>
-#include <cmath>
 
 Tempo::Tempo(int dia, int hora, int minuto) {
 	this->dia = dia;
@@ -12,7 +11,8 @@ Tempo::Tempo(int dia, int hora, int minuto) {
 	this->tempoPassado = 0.f;
 	this->rapido = false;
 
-	texto = Writer(horarioToString(), sf::FloatRect(10.f, 10.f, 100.f, 100.f), true, "Fontes/relogio.ttf");
+	texto = Writer(horarioToString(), { 10.f, 10.f, 320.f, 240.f }, true, "Fontes/relogio.ttf");
+	texto.update();
 	texto.setFontColor(sf::Color::White);
 
 	if (deDia())

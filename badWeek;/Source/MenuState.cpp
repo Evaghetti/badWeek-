@@ -18,7 +18,7 @@ MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
 }
 
 void MenuState::draw() {
-	window->clear(sf::Color::White);
+	window->clear({ 120, 120, 120, 255 });
 
 	window->draw(spritePC);
 	for (unsigned i = 0; i < botoes.size(); i++)

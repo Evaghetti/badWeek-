@@ -11,13 +11,14 @@ MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
 	
 	spritePC = sf::Sprite(*texturaPC);
 	spritePC.setScale(.25f, .25f);
+	spritePC.setPosition(425.f, 305.f);
 
 	for (unsigned i = 0; i < botoes.size(); i++)
-		botoes[i] = std::make_unique<Button>(sf::Vector2f(250.f , 100.f * i), sf::Vector2f(150.f, 75.f), "Teste");
+		botoes[i] = std::make_unique<Button>(sf::Vector2f(50.f , 150.f + (100.f * i)), sf::Vector2f(300.f, 75.f), "Teste");
 }
 
 void MenuState::draw() {
-	window->clear();
+	window->clear(sf::Color::White);
 
 	window->draw(spritePC);
 	for (unsigned i = 0; i < botoes.size(); i++)
@@ -39,14 +40,8 @@ void MenuState::handleInput() {
 	}
 }
 
-void MenuState::update() {
-	for (unsigned i = 0; i < botoes.size(); i++) {
-		if (botoes[i]->foiUsado()) {
-			std::cout << "Clicou no botao " << i << std::endl;
-			break;
-		}
-	}
+void MenuState::update() {}
 
-	for (unsigned i = 0; i < botoes.size(); i++)
-		botoes[i]->update();
+bool MenuState::works() const {
+	return GameState::works() && !botoes.back()->foiUsado();
 }

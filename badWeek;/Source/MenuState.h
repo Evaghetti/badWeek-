@@ -17,6 +17,7 @@ class MenuState : public GameState {
 		void handleInput() override;
 		void update() override;
 
+		bool works() const override;
 	private:
 		sf::Sprite spritePC;
 

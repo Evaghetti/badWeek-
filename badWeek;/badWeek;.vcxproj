@@ -142,6 +142,7 @@
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\Manager.h" />
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\Random.h" />
     <ClInclude Include="..\badWeek%3b\Source\JudgeState.h" />
+    <ClInclude Include="..\badWeek%3b\Source\MenuState.h" />
     <ClInclude Include="..\badWeek%3b\Source\Player.h" />
     <ClInclude Include="..\badWeek%3b\Source\PlayState.h" />
     <ClInclude Include="..\badWeek%3b\Source\Tempo.h" />
@@ -156,6 +157,7 @@
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\GUI\Writer.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\FrameWork\Random.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\JudgeState.cpp" />
+    <ClCompile Include="..\badWeek%3b\Source\MenuState.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\Player.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\PlayState.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\Tempo.cpp" />

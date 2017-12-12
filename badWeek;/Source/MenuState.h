@@ -26,4 +26,7 @@ class MenuState : public GameState {
 		std::array<std::unique_ptr<Widget>, 3> botoes;
 
 		Writer titulo;
+
+		bool mandouFechar;
+		int buttonAtual;
 };

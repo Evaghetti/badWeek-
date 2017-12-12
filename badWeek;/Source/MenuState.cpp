@@ -20,6 +20,8 @@ MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
 	botoes[0] = std::make_unique<Button>(sf::Vector2f(50.f , 150.f + (100.f * 0)), sf::Vector2f(300.f, 75.f), "Jogar");
 	botoes[1] = std::make_unique<Button>(sf::Vector2f(50.f, 150.f + (100.f * 1)), sf::Vector2f(300.f, 75.f), "Créditos");
 	botoes[2] = std::make_unique<Button>(sf::Vector2f(50.f, 150.f + (100.f * 2)), sf::Vector2f(300.f, 75.f), "Sair");
+
+	buttonAtual = 0;
 }
 
 void MenuState::draw() {
@@ -40,14 +42,35 @@ void MenuState::handleInput() {
 		if (e.type == sf::Event::Closed)
 			window->close();
 		if (e.type == sf::Event::MouseMoved || e.type == sf::Event::MouseButtonPressed) {
-			for (unsigned i = 0; i < botoes.size(); i++)
-				botoes[i]->handleMouse(sf::Vector2f(sf::Mouse::getPosition(*window)));
+			for (auto &it : botoes)
+				it->handleMouse(sf::Vector2f(sf::Mouse::getPosition(*window)));
+		}
+		if (e.type == sf::Event::KeyPressed) {
+			switch (e.key.code) {
+				case sf::Keyboard::Up:
+					buttonAtual--;
+					buttonAtual = buttonAtual % botoes.size();
+					break;
+				case sf::Keyboard::Down:
+					buttonAtual++;
+					if (buttonAtual >= botoes.size())
+						buttonAtual = botoes.size() - 1;
+					break;
+				case sf::Keyboard::Return:
+					botoes[buttonAtual]->handleInput();
+					break;
+			}
 		}
 	}
 }
 
-void MenuState::update() {}
+void MenuState::update() {
+	mandouFechar = botoes.back()->foiUsado();
+	
+	for (auto &it : botoes)
+		it->update();
+}
 
 bool MenuState::works() const {
-	return GameState::works() && !botoes.back()->foiUsado();
+	return GameState::works() && !mandouFechar;
 }

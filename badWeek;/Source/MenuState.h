@@ -18,7 +18,6 @@ class MenuState : public GameState {
 		void handleInput() override;
 		void update() override;
 
-		bool works() const override;
 	private:
 		sf::Sprite spritePC;
 
@@ -27,6 +26,6 @@ class MenuState : public GameState {
 
 		Writer titulo, comoJogar;
 
-		bool mandouFechar, instrucoes;
+		bool instrucoes;
 		int buttonAtual;
 };

@@ -101,12 +101,10 @@ void MenuState::update() {
 		instrucoes = botoes[botoes.size() / 2]->foiUsado();
 	else
 		comoJogar.update();
-	mandouFechar = botoes.back()->foiUsado();
+
+	if (botoes.back()->foiUsado())
+		window->close();
 	
 	for (auto &it : botoes)
 		it->update();
-}
-
-bool MenuState::works() const {
-	return GameState::works() && !mandouFechar;
 }

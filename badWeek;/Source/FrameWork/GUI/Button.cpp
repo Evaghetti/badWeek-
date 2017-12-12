@@ -10,14 +10,14 @@ Button::Button(const sf::Vector2f& position, const sf::Vector2f& tamanho,
 				buttonText(text, {position, tamanho}, true, "Fontes/UI.ttf")
 {
 	buttonBox.setPosition(position);
-	buttonBox.setFillColor(sf::Color::Cyan);
+	buttonBox.setFillColor(normal);
 	
 	buttonText.setOutline(.75f);
 	buttonText.update();
 }
 
 void Button::handleInput() {
-	buttonBox.setFillColor(sf::Color::Blue);
+	buttonBox.setFillColor(selecionado);
 	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
 		usado = true;
@@ -25,12 +25,12 @@ void Button::handleInput() {
 
 void Button::handleMouse(const sf::Vector2f& mousePos) {
 	if (buttonBox.getGlobalBounds().contains(mousePos)) {
-		buttonBox.setFillColor(sf::Color::Blue);
+		buttonBox.setFillColor(selecionado);
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 			usado = true;
 	}
 	else
-		buttonBox.setFillColor(sf::Color::Cyan);
+		buttonBox.setFillColor(normal);
 }
 
 void Button::draw(sf::RenderTarget& target) {

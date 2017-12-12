@@ -3,6 +3,7 @@
 #include "Writer.h"
 
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/Color.hpp>
 #include <SFML/System/Vector2.hpp>
 
 #include <string>
@@ -21,4 +22,7 @@ class Button : public Widget {
 	private:
 		sf::RectangleShape buttonBox;
 		Writer buttonText;
+
+		const sf::Color normal = sf::Color(125, 125, 125, 255);
+		const sf::Color selecionado = sf::Color(75, 75, 75, 255);
 };

@@ -9,6 +9,7 @@
 MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
 	titulo = Writer("badWeek;", { 0.f, 0.f, 640.f, 480.f }, true, "Fontes/UI.ttf");
 	titulo.setFontSize(100.f);
+	titulo.setOutline(5.f);
 	titulo.update();
 	
 	comoJogar = Writer(
@@ -43,8 +44,6 @@ MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
 	musica.setLoop(true);
 	musica.setVolume(20.f);
 	musica.play();
-
-	titulo.setOutline(2.f);
 
 	buttonAtual = 0;
 }

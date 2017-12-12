@@ -129,10 +129,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Image Include="..\..\badWeek%3b\badWeek%3b\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\badWeek%3b\resource.h" />
+    <ClInclude Include="..\badWeek%3b\resource1.h" />
     <ClInclude Include="..\badWeek%3b\Source\Computador.h" />
     <ClInclude Include="..\badWeek%3b\Source\Engine.h" />
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\GameState.h" />
@@ -161,6 +159,12 @@
     <ClCompile Include="..\badWeek%3b\Source\Player.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\PlayState.cpp" />
     <ClCompile Include="..\badWeek%3b\Source\Tempo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\badWeek%3b\badWeek%3b1.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\badWeek%3b\icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,11 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\badWeek%3b\badWeek%3b\icon.ico">
-      <Filter>Arquivos de Recurso</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\badWeek%3b\Source\Computador.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -47,9 +42,6 @@
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\Random.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\badWeek%3b\resource.h">
-      <Filter>Arquivos de Recurso</Filter>
-    </ClInclude>
     <ClInclude Include="..\badWeek%3b\Source\FrameWork\GUI\Widget.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -60,6 +52,12 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="..\badWeek%3b\Source\MenuState.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\badWeek%3b\resource1.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\badWeek%3b\resource.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
@@ -103,5 +101,15 @@
     <ClCompile Include="..\badWeek%3b\Source\MenuState.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\badWeek%3b\badWeek%3b1.rc">
+      <Filter>Arquivos de Recurso</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\badWeek%3b\icon.ico">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
   </ItemGroup>
 </Project>

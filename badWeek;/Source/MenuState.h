@@ -25,8 +25,8 @@ class MenuState : public GameState {
 		std::shared_ptr<sf::Texture> texturaPC;
 		std::array<std::unique_ptr<Widget>, 3> botoes;
 
-		Writer titulo;
+		Writer titulo, comoJogar;
 
-		bool mandouFechar;
+		bool mandouFechar, instrucoes;
 		int buttonAtual;
 };

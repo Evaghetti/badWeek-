@@ -53,13 +53,12 @@ void MenuState::handleInput() {
 					break;
 				case sf::Keyboard::Down:
 					buttonAtual++;
-					if (buttonAtual >= botoes.size())
+					if (unsigned(buttonAtual) >= botoes.size())
 						buttonAtual = botoes.size() - 1;
 					break;
-				case sf::Keyboard::Return:
-					botoes[buttonAtual]->handleInput();
-					break;
 			}
+
+			botoes[buttonAtual]->handleInput();
 		}
 	}
 }

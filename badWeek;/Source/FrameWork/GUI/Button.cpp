@@ -16,7 +16,9 @@ Button::Button(const sf::Vector2f& position, const sf::Vector2f& tamanho,
 
 void Button::handleInput() {
 	buttonBox.setFillColor(sf::Color::Blue);
-	usado = true;
+	
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+		usado = true;
 }
 
 void Button::handleMouse(const sf::Vector2f& mousePos) {

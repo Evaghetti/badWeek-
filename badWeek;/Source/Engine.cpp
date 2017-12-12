@@ -27,7 +27,22 @@ void Engine::run() {
 			gameStates.front()->draw();
 		}
 
+		ChangeState proxState = gameStates.front()->qualTrocar();
 		gameStates.erase(gameStates.begin());
+
+		if (proxState != NENHUM) {
+			switch (proxState) {
+			case MENU:
+				gameStates.push_back(std::make_unique<MenuState>(&window));
+				break;
+			case JOGAR:
+				gameStates.push_back(std::make_unique<PlayState>(&window));
+				break;
+			case JULGAR:
+				gameStates.push_back(std::make_unique<JudgeState>(&window));
+				break;
+			}
+		}
 		
 		TextureManager::liberar();
 		FontManager::liberar();

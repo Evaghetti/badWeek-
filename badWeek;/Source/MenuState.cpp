@@ -105,13 +105,17 @@ void MenuState::update() {
 	if (botoes.back()->foiUsado())
 		window->close();
 	
-	for (auto &it : botoes)
-		it->update();
+	for (unsigned i = 1; i < botoes.size(); i++)
+		botoes[i]->update();
+}
+
+bool MenuState::works() const {
+	return GameState::works() && !botoes.front()->foiUsado();
 }
 
 ChangeState MenuState::qualTrocar() const {
-	if (!window->isOpen())
-		return NENHUM;
-	else
+	if (window->isOpen())
 		return JOGAR;
+	else
+		return NENHUM;
 }

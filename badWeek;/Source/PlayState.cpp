@@ -82,7 +82,7 @@ bool PlayState::works() const {
 }
 
 ChangeState PlayState::qualTrocar() const {
-	if (!(relogio.acabouTempo() || pc.getPaginaAtual() == MANDAR_PROJETO || player.morreu()))
+	if (relogio.acabouTempo() || pc.getPaginaAtual() == MANDAR_PROJETO || player.morreu())
 		return JULGAR;
 	else
 		return NENHUM;

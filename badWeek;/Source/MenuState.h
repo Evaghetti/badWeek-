@@ -22,9 +22,9 @@ class MenuState : public GameState {
 
 		ChangeState qualTrocar() const override;
 	private:
-		sf::Sprite spritePC;
+		sf::Sprite spritePC, spriteBackground;
 
-		std::shared_ptr<sf::Texture> texturaPC;
+		std::shared_ptr<sf::Texture> texturaPC, texturaBackground;
 		std::array<std::unique_ptr<Widget>, 3> botoes;
 
 		Writer titulo, comoJogar;

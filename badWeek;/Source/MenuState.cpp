@@ -26,10 +26,14 @@ MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
 	comoJogar.setFontSize(20.f);
 
 	texturaPC = TextureManager::carregar("Imagens/Computer.png");
-	
+	texturaBackground = TextureManager::carregar("Imagens/menu background.jpg");
+
 	spritePC = sf::Sprite(*texturaPC);
 	spritePC.setScale(.25f, .25f);
 	spritePC.setPosition(425.f, 305.f);
+
+	spriteBackground = sf::Sprite(*texturaBackground);
+	spriteBackground.setScale(1.5f, 1.75f);
 
 	botoes[0] = std::make_unique<Button>(sf::Vector2f(50.f , 150.f + (100.f * 0)), sf::Vector2f(300.f, 75.f), "Jogar");
 	botoes[1] = std::make_unique<Button>(sf::Vector2f(50.f, 150.f + (100.f * 1)), sf::Vector2f(300.f, 75.f), "Como jogar");
@@ -40,16 +44,16 @@ MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
 
 void MenuState::draw() {
 	window->clear({ 120, 120, 120, 255 });
-
+	window->draw(spriteBackground);
+	
 	if (!instrucoes) {
 		titulo.draw(*window);
 		window->draw(spritePC);
 		for (auto &it : botoes)
 			it->draw(*window);
 	}
-	else {
+	else 
 		comoJogar.draw(*window);
-	}
 
 	window->display();
 }

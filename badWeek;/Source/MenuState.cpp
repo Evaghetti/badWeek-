@@ -65,22 +65,7 @@ void MenuState::handleInput() {
 				it->handleMouse(sf::Vector2f(sf::Mouse::getPosition(*window)));
 		}
 		if (e.type == sf::Event::KeyPressed) {
-			if (!instrucoes) {
-				switch (e.key.code) {
-				case sf::Keyboard::Up:
-					buttonAtual--;
-					buttonAtual = buttonAtual % botoes.size();
-					break;
-				case sf::Keyboard::Down:
-					buttonAtual++;
-					if (unsigned(buttonAtual) >= botoes.size())
-						buttonAtual = botoes.size() - 1;
-					break;
-				}
-
-				botoes[buttonAtual]->handleInput();
-			}
-			else {
+			if (instrucoes && comoJogar.done()) {
 				comoJogar.setMensagem(
 					"Você é um estágiario de programador que deve acabar um projeto de um mês em \
 					um três dias.\n\

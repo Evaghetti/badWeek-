@@ -44,21 +44,30 @@ MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
 	musica.setVolume(20.f);
 	musica.play();
 
+	titulo.setOutline(2.f);
+
 	buttonAtual = 0;
 }
 
 void MenuState::draw() {
 	window->clear({ 120, 120, 120, 255 });
-	window->draw(spriteBackground);
 	
 	if (!instrucoes) {
+		spriteBackground.setColor(sf::Color::White);
+		window->draw(spriteBackground);
+
 		titulo.draw(*window);
 		window->draw(spritePC);
+		
 		for (auto &it : botoes)
 			it->draw(*window);
 	}
-	else 
+	else {
+		spriteBackground.setColor({ 150, 150, 150, 255 });
+		window->draw(spriteBackground);
+		
 		comoJogar.draw(*window);
+	}
 
 	window->display();
 }

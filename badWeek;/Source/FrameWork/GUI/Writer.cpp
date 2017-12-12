@@ -96,7 +96,7 @@ void Writer::setFontSize(const float tamanho) {
 	texto.setCharacterSize((unsigned)tamanho);
 }
 
-void Writer::setFontColor(sf::Color cor) {
+void Writer::setFontColor(const sf::Color& cor) {
 	texto.setFillColor(cor);
 }
 
@@ -112,6 +112,11 @@ void Writer::setMensagem(const std::string& mensagem) {
 
 	texto.setString("");
 	ler(mensagem);
+}
+
+void Writer::setOutline(const float tamanho, const sf::Color& cor) {
+	texto.setOutlineThickness(tamanho);
+	texto.setOutlineColor(cor);
 }
 
 void Writer::scaleToFit(const std::string& mensagem, const float fracDiminuir) {

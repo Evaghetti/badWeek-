@@ -11,6 +11,8 @@ Button::Button(const sf::Vector2f& position, const sf::Vector2f& tamanho,
 {
 	buttonBox.setPosition(position);
 	buttonBox.setFillColor(sf::Color::Cyan);
+	
+	buttonText.setOutline(.75f);
 	buttonText.update();
 }
 

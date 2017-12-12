@@ -19,11 +19,13 @@ class Writer {
 		void setRect(const sf::FloatRect& caixa);
 		void setFontSize(const float tamanho);
 		void setMensagem(const std::string& mensagem);
-		void setFontColor(sf::Color cor = sf::Color::White);
+		void setFontColor(const sf::Color& cor = sf::Color::White);
+		void setOutline(const float tamanho, const sf::Color& cor = sf::Color::Black);
 
 		void setParams(const Writer& outro);
 
 		void scaleToFit(const std::string& mensagem, const float fracDiminuir);
+		
 		bool done() const;
 	private:
 		void ler(const std::string& mensagem);

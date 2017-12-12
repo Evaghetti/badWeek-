@@ -7,19 +7,25 @@
 #include <iostream>
 
 MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
+	titulo = Writer("badWeek;", { 0.f, 0.f, 640.f, 480.f }, true, "Fontes/UI.ttf");
+	titulo.setFontSize(100.f);
+	titulo.update();
+	
 	texturaPC = TextureManager::carregar("Imagens/Computer.png");
 	
 	spritePC = sf::Sprite(*texturaPC);
 	spritePC.setScale(.25f, .25f);
 	spritePC.setPosition(425.f, 305.f);
 
-	for (unsigned i = 0; i < botoes.size(); i++)
-		botoes[i] = std::make_unique<Button>(sf::Vector2f(50.f , 150.f + (100.f * i)), sf::Vector2f(300.f, 75.f), "Teste");
+	botoes[0] = std::make_unique<Button>(sf::Vector2f(50.f , 150.f + (100.f * 0)), sf::Vector2f(300.f, 75.f), "Jogar");
+	botoes[1] = std::make_unique<Button>(sf::Vector2f(50.f, 150.f + (100.f * 1)), sf::Vector2f(300.f, 75.f), "Créditos");
+	botoes[2] = std::make_unique<Button>(sf::Vector2f(50.f, 150.f + (100.f * 2)), sf::Vector2f(300.f, 75.f), "Sair");
 }
 
 void MenuState::draw() {
 	window->clear({ 120, 120, 120, 255 });
 
+	titulo.draw(*window);
 	window->draw(spritePC);
 	for (unsigned i = 0; i < botoes.size(); i++)
 		botoes[i]->draw(*window);

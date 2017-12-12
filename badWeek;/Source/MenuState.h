@@ -1,6 +1,7 @@
 #pragma once
 #include "FrameWork/GameState.h"
 #include "FrameWork/GUI/Widget.h"
+#include "FrameWork/GUI/Writer.h"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Texture.hpp>
@@ -23,4 +24,6 @@ class MenuState : public GameState {
 
 		std::shared_ptr<sf::Texture> texturaPC;
 		std::array<std::unique_ptr<Widget>, 3> botoes;
+
+		Writer titulo;
 };

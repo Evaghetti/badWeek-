@@ -6,6 +6,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Audio/Music.hpp>
 
 #include <memory>
 #include <array>
@@ -23,6 +24,7 @@ class MenuState : public GameState {
 		ChangeState qualTrocar() const override;
 	private:
 		sf::Sprite spritePC, spriteBackground;
+		sf::Music musica;
 
 		std::shared_ptr<sf::Texture> texturaPC, texturaBackground;
 		std::array<std::unique_ptr<Widget>, 3> botoes;

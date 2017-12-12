@@ -39,6 +39,11 @@ MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
 	botoes[1] = std::make_unique<Button>(sf::Vector2f(50.f, 150.f + (100.f * 1)), sf::Vector2f(300.f, 75.f), "Como jogar");
 	botoes[2] = std::make_unique<Button>(sf::Vector2f(50.f, 150.f + (100.f * 2)), sf::Vector2f(300.f, 75.f), "Sair");
 
+	musica.openFromFile("Sounds/menu music.wav");
+	musica.setLoop(true);
+	musica.setVolume(20.f);
+	musica.play();
+
 	buttonAtual = 0;
 }
 

@@ -108,3 +108,10 @@ void MenuState::update() {
 	for (auto &it : botoes)
 		it->update();
 }
+
+ChangeState MenuState::qualTrocar() const {
+	if (!window->isOpen())
+		return NENHUM;
+	else
+		return JOGAR;
+}

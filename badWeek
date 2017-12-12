@@ -1,6 +1,10 @@
-﻿  MenuState.cpp
+﻿  PlayState.cpp
+  MenuState.cpp
+  JudgeState.cpp
   Gerando Código...
   Compilando...
+  main.cpp
+  GameState.cpp
   Engine.cpp
   Gerando Código...
   badWeek;.vcxproj -> C:\Users\Enzo\Desktop\Programação\Jogos\badWeek-\Debug\badWeek;.exe

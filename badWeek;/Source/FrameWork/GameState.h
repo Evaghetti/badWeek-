@@ -3,6 +3,13 @@
 #include <chrono>
 #include <string>
 
+enum ChangeState {
+	NENHUM,
+	MENU,
+	JOGAR,
+	JULGAR
+};
+
 class GameState {
 	public:
 		GameState(sf::RenderWindow* window);
@@ -14,6 +21,8 @@ class GameState {
 
 		float getDeltaTime();
 		virtual bool works() const;
+		virtual ChangeState qualTrocar() const = 0;
+		
 	private:
 		std::chrono::steady_clock::time_point timePoint;
 	protected:

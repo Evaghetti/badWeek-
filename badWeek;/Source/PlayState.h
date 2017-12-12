@@ -18,7 +18,9 @@ public:
 	void draw() override;
 	void handleInput() override;
 	void update() override;
+
 	bool works() const override;
+	ChangeState qualTrocar() const override;
 private:
 	Computador pc;
 	Tempo relogio;

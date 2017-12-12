@@ -80,3 +80,10 @@ void PlayState::update() {
 bool PlayState::works() const {
 	return GameState::works() && !(relogio.acabouTempo() || pc.getPaginaAtual() == MANDAR_PROJETO || player.morreu());
 }
+
+ChangeState PlayState::qualTrocar() const {
+	if (!(relogio.acabouTempo() || pc.getPaginaAtual() == MANDAR_PROJETO || player.morreu()))
+		return JULGAR;
+	else
+		return NENHUM;
+}

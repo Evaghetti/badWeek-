@@ -14,15 +14,13 @@ Engine::Engine(const std::string& nome, int largura, int altura)
 	icon.loadFromFile("icon.bmp");
 
 	gameStates.push_back(std::make_unique<MenuState>(&window));
-	//gameStates.push_back(std::make_unique<PlayState>(&window));
-	//gameStates.push_back(std::make_unique<JudgeState>(&window));
 
 	window.setIcon(850, 689, icon.getPixelsPtr());
 	run();
 }
 
 void Engine::run() {
-	while (!gameStates.empty()) {
+	while (window.isOpen()) {
 		while (gameStates.front()->works()) {
 			gameStates.front()->handleInput();
 			gameStates.front()->update();

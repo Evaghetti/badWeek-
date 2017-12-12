@@ -106,3 +106,10 @@ void JudgeState::julgar() {
 bool JudgeState::works() const {
 	return GameState::works() && !sair;
 }
+
+ChangeState JudgeState::qualTrocar() const {
+	if (window->isOpen())
+		return MENU;
+	else
+		return NENHUM;
+}

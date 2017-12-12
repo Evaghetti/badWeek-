@@ -13,6 +13,7 @@ class JudgeState : public GameState {
 		void handleInput() override;
 
 		bool works() const override;
+		ChangeState qualTrocar() const override;
 	private:
 		Writer texto;
 		Player player;

@@ -24,7 +24,7 @@ Tempo::Tempo(int dia, int hora, int minuto) {
 std::string Tempo::horarioToString() const {
 	std::stringstream sb;
 
-	sb << "Dia " << dia << "\n\n";
+	sb << "DAY " << dia << "\n\n";
 	
 	if (hora < 10)
 		sb << '0';

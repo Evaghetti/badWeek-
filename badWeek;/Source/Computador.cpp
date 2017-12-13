@@ -5,7 +5,7 @@
 #include <fstream>
 
 Computador::Computador(const sf::Vector2f& position, const sf::Vector2f& scale)
-	: principal("1)Programar\n2)Navegar Na internet.\n3)Mandar projeto pro seu chefe para avaliação.\n", sf::FloatRect(), true),
+	: principal("1)Code\n2)Use the internet.\n3)Send your project to your boss.\n", sf::FloatRect(), true),
 	  codigo("", sf::FloatRect())
 {
 	texturaSprite = TextureManager::carregar("Imagens/Computer.png");

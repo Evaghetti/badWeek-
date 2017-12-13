@@ -59,45 +59,45 @@ void JudgeState::julgar() {
 	if (!player.morreu()) {
 		//Final bom
 		if (player.quantCodigos >= quantConseguir) {
-			fraseFinal << "Você conseguiu cumprir a meta dada pelo seu chefe! Ele está tão feliz que você recebeu uma promoção\n";
+			fraseFinal << "You managed to complete the project, your bosss is so happy that you received a promotion\n";
 			
 			if (player.felicidade >= 50.f)
-				fraseFinal << "Se antes você estava feliz imagine agora! Tamanha felicidade refletiu nas sua vida social e nos seus códigos, parabéns!\n";
+				fraseFinal << "If you were happy before imagine it now! So much happiness has affected on your social life and on your code. Congratulations\n";
 			if (player.sono <= 50.f)
-				fraseFinal << "Agora que está com sua vaga garantida, pode finalmente descansar, mas cuidado para não repetir essa situação.\n";
-			fraseFinal << "FIM.";
+				fraseFinal << "Now that you are sure that you will not lose you job, you can finally rest, but take care to not make history repeat itself.\n";
+			fraseFinal << "THE END.";
 			texto.setFontColor(sf::Color::Green);
 		}
 		//Final médio e ruim
 		else {
-			fraseFinal << "Você não conseguiu a meta dada pelo seu chefe, ";
+			fraseFinal << "You couldn't make the deadline, ";
 			//Final médio.
 			if (player.quantCodigos >= quantConseguir / 2) {
-				fraseFinal << "no entanto ele percebe todo o esforço que você fez para conseguir terminar sua parte a tempo e permite que você fique com a vaga.\n";
+				fraseFinal << "but your boss noticed how much you tried to make it in time and let you stay in the job.\n";
 				if (player.felicidade <= 40.f)
-					fraseFinal << "Apesar de estarem brabos contigo por não ter terminado o projeto a tempo, os seus colegas começaram a te ajudar a melhorar quando viram que você não estava muito feliz com a situação.\n";
+					fraseFinal << "Although the people that work alongside you are mad at you for not making in it in time, they tried to make you be better when noticed that you were not happy with the situation\n";
 				else if (player.sono >= 80.f)
-					fraseFinal << "Agora com sua vaga garantida, você decide desncansar o suficiente para recuperar o tempo gasto trabalhando, isso não te soa familiar?\n";
-				fraseFinal << "Talvez seu final não tenha sido triste, mas não acha que podia ter sindo melhor?";
+					fraseFinal << "Now that you may stay on your job, you decide to rest enough to recover the wasted time working, doesn't it sound familiar?\n";
+				fraseFinal << "Even though your ending wasn't sad, don't you think it could have been better?";
 				texto.setFontColor(sf::Color::White);
 			}
 			//Final ruim.
 			else {
-				fraseFinal << "e como ele percebeu que você fez nada para contribuir no projeto, ele decide demiti-lo.\n";
+				fraseFinal << "and since you have done basically nothing in this week, your boss has fired you.\n";
 				
 				if (player.felicidade < 20.f)
-					fraseFinal << "Você estava abalado emocional e psicologicamente, e essa noticia de seu chefe foi a gota d'água. Na noite seguinte você comete suicidio.\n";
-				fraseFinal << "Ah se na vida tivesse uma forma de tentar de novo né?";
+					fraseFinal << "You are mentally and physically ill, and this news was the last drop of water that you nedeed. On the next night you committed suicide.\n";
+				fraseFinal << "How good would it be if life had a way to restart right?";
 				texto.setFontColor(sf::Color::Red);
 			}
 		}
 	}
 	else {
 		if (player.felicidade <= -20.f)
-			fraseFinal << "Após tanto programr, você começa a pensar se vale realmente a pena isso tudo, e por conta de todo o abalo psicológico que passou durante os ultimos dias, acaba por cometer suicidio em algum lugar desconhecido, onde ninguém pode achar seu corpo\n";
+			fraseFinal << "After so much time programming, you start to think if all of this evens is worth it , after much tought on the matter, you end up commiting suicide on a unkwon place, where no one can find your body.\n";
 		else if (player.sono >= 120.f)
-			fraseFinal << "Até que o progresso do projeto está indo bem, mas você está cansado de tanto programar e lembra que nem mesmo jantou e como não havia comida em casa decide ir para um fast food, porém no caminho acaba dormindo no volante e bate numa arvore. Você morre um dia depois no hospital.\n";
-		fraseFinal << "VOCÊ MORREU.";
+			fraseFinal << "The progress on the project is going weel, but you're starting to get tired of programming and remembers that you even havent had dinner and, since there was no food on your house, decides to go to a fast food, but on the way to there you fell insleep and crashes on a tree. you die the next die on the hospital.\n";
+		fraseFinal << "YOU DIED.";
 		texto.setFontColor(sf::Color::Red);
 	}
 	texto.setMensagem(fraseFinal.str());

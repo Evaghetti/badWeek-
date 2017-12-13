@@ -1,7 +1,12 @@
-﻿     Criando biblioteca C:\Users\Enzo\Desktop\Programação\Jogos\badWeek-\Release\badWeek;.lib e objeto C:\Users\Enzo\Desktop\Programação\Jogos\badWeek-\Release\badWeek;.exp
+﻿  Computador.cpp
+  JudgeState.cpp
+  MenuState.cpp
+  Player.cpp
+  Tempo.cpp
+     Criando biblioteca C:\Users\Enzo\Desktop\Programação\Jogos\badWeek-\Release\badWeek;.lib e objeto C:\Users\Enzo\Desktop\Programação\Jogos\badWeek-\Release\badWeek;.exp
   Gerando código
-  0 of 1392 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    74 functions had inline decision re-evaluated but remain unchanged
+  12 of 1392 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
+    4 functions were new in current compilation
+    57 functions had inline decision re-evaluated but remain unchanged
   Finalizada a geração de código
   badWeek;.vcxproj -> C:\Users\Enzo\Desktop\Programação\Jogos\badWeek-\Release\badWeek;.exe

@@ -40,8 +40,8 @@ void Player::draw(sf::RenderTarget& target) {
 std::string Player::toString() const {
 	std::stringstream sb;
 	
-	sb << "FELICIDADE: " << (int)felicidade << "\n\n" << "SONO: " << (int)sono
-	   << "\n\n" << "CODIGOS FEITOS: " << quantCodigos;
+	sb << "HAPPINESS: " << (int)felicidade << "\n\n" << "SLEEP: " << (int)sono
+	   << "\n\n" << "PROGRAMS MADE: " << quantCodigos;
 	return sb.str();
 }
 

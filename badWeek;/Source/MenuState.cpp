@@ -13,13 +13,13 @@ MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
 	titulo.update();
 	
 	comoJogar = Writer(
-		"Você é um estágiario de programador que deve acabar um projeto de um mês em \
-		um três dias.\n\
-		Não deixe sua felicidade chegar a -20, ou você entrará em depressão\n\
-		Você pode aumentar sua felicidade navegando na internet.\n\
-		Também cuide de seu sono, não deixe chegar a 120 ou algo de ruim pode \
-		acontecer, durma desligando o computador no botão vermelho para recuperar seu sono.\n\
-		Caso ache que o projeto já está pronto, mande para o seu chefe! Boa sorte!",
+		"You are a programmr that has to finish a month old project\
+		in a week.\n\
+		Don't let your happiner drop down to -20, or you will start to be depressed\n\
+		You can raise it by using the internet.\n\
+		Also watch out for how much you sleep you need, if it gets to 120 something bad \
+		may happen, you can sleep by pressing the red button on the monitor.\n\
+		If you think the project is ready, send it to your boss! Good luck!",
 		{ 0.f, 0.f, 640.f, 480.f },
 		false,
 		"Fontes/UI.ttf"
@@ -36,9 +36,9 @@ MenuState::MenuState(sf::RenderWindow* window) : GameState(window) {
 	spriteBackground = sf::Sprite(*texturaBackground);
 	spriteBackground.setScale(1.5f, 1.75f);
 
-	botoes[0] = std::make_unique<Button>(sf::Vector2f(50.f , 150.f + (100.f * 0)), sf::Vector2f(300.f, 75.f), "Jogar");
-	botoes[1] = std::make_unique<Button>(sf::Vector2f(50.f, 150.f + (100.f * 1)), sf::Vector2f(300.f, 75.f), "Como jogar");
-	botoes[2] = std::make_unique<Button>(sf::Vector2f(50.f, 150.f + (100.f * 2)), sf::Vector2f(300.f, 75.f), "Sair");
+	botoes[0] = std::make_unique<Button>(sf::Vector2f(50.f , 150.f + (100.f * 0)), sf::Vector2f(300.f, 75.f), "New Game");
+	botoes[1] = std::make_unique<Button>(sf::Vector2f(50.f, 150.f + (100.f * 1)), sf::Vector2f(300.f, 75.f), "How to play");
+	botoes[2] = std::make_unique<Button>(sf::Vector2f(50.f, 150.f + (100.f * 2)), sf::Vector2f(300.f, 75.f), "Exit");
 
 	musica.openFromFile("Sounds/menu music.wav");
 	musica.setLoop(true);
@@ -62,7 +62,7 @@ void MenuState::draw() {
 			it->draw(*window);
 	}
 	else {
-		spriteBackground.setColor({ 150, 150, 150, 255 });
+		spriteBackground.setColor({ 100, 100, 100, 255 });
 		window->draw(spriteBackground);
 		
 		comoJogar.draw(*window);
@@ -77,20 +77,20 @@ void MenuState::handleInput() {
 	while (window->pollEvent(e)) {
 		if (e.type == sf::Event::Closed)
 			window->close();
-		if (e.type == sf::Event::MouseMoved || e.type == sf::Event::MouseButtonPressed) {
+		if (e.type == sf::Event::MouseMoved || e.type == sf::Event::MouseButtonPressed && !instrucoes) {
 			for (auto &it : botoes)
 				it->handleMouse(sf::Vector2f(sf::Mouse::getPosition(*window)));
 		}
 		if (e.type == sf::Event::KeyPressed) {
 			if (instrucoes && comoJogar.done()) {
 				comoJogar.setMensagem(
-					"Você é um estágiario de programador que deve acabar um projeto de um mês em \
-					um três dias.\n\
-					Não deixe sua felicidade chegar a -20, ou você entrará em depressão\n\
-					Você pode aumentar sua felicidade navegando na internet.\n\
-					Também cuide de seu sono, não deixe chegar a 120 ou algo de ruim pode \
-					acontecer, durma desligando o computador no botão vermelho para recuperar seu sono.\n\
-					Caso ache que o projeto já está pronto, mande para o seu chefe! Boa sorte!"
+					"You are a programmr that has to finish a month old project\
+					in a week.\n\
+					Don't let your happiner drop down to -20, or you will start to be depressed\n\
+					You can raise it by using the internet.\n\
+					Also watch out for how much you sleep you need, if it gets to 120 something bad \
+					may happen, you can sleep by pressing the red button on the monitor.\n\
+					If you think the project is ready, send it to your boss! Good luck!"
 				);
 				instrucoes = false;
 			}
